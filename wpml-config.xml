@@ -1,0 +1,55 @@
+<wpml-config>
+    <admin-texts>
+        <key name="neuzin">
+            <key name="phone" />
+            <key name="email" />
+            <key name="address" />
+            <key name="online_button_text" />
+            <key name="copyright_text" />
+            <key name="error_title" />
+            <key name="error_text1" />
+            <key name="error_text2" />
+            <key name="error_buttontext" />
+            <key name="team_slug" />
+            <key name="service_slug" />
+            <key name="portfolio_slug" />
+            <key name="testimonial_slug" />
+            <key name="wc_related_title" />
+            <key name="wc_related_subtitle" />
+        </key>
+    </admin-texts>
+	<custom-types>
+        <custom-type translate="1">neuzin_team</custom-type>
+        <custom-type translate="1">neuzin_service</custom-type>
+        <custom-type translate="1">neuzin_portfolio</custom-type>
+        <custom-type translate="1">neuzin_testim</custom-type>
+    </custom-types>
+    <taxonomies>
+        <taxonomy translate="1">neuzin_team_category</taxonomy>
+        <taxonomy translate="1">neuzin_service_category</taxonomy>
+        <taxonomy translate="1">neuzin_portfolio_category</taxonomy>
+        <taxonomy translate="1">neuzin_testimonial_category</taxonomy>
+    </taxonomies>
+	<custom-fields>
+       <custom-field action="translate">neuzin_team_designation</custom-field>
+       <custom-field action="translate">neuzin_team_email</custom-field>
+       <custom-field action="translate">neuzin_team_phone</custom-field>
+       <custom-field action="translate">neuzin_team_address</custom-field>
+       <custom-field action="translate">neuzin_team_contact_form</custom-field>
+       <custom-field action="translate">skill_name</custom-field>
+       <custom-field action="translate">skill_value</custom-field>
+       <custom-field action="translate">neuzin_service_contact</custom-field>
+       <custom-field action="translate">neuzin_service_email</custom-field>
+       <custom-field action="translate">neuzin_service_button</custom-field>
+       <custom-field action="translate">neuzin_service_icon</custom-field>
+       <custom-field action="translate">neuzin_service_img</custom-field>
+	   
+       <custom-field action="translate">neuzin_port_info_title</custom-field>
+       <custom-field action="translate">neuzin_port_des</custom-field>
+       <custom-field action="translate">neuzin_client_name</custom-field>
+       <custom-field action="translate">neuzin_start_date</custom-field>
+       <custom-field action="translate">neuzin_finish_date</custom-field>
+       <custom-field action="translate">neuzin_website</custom-field>
+       <custom-field action="translate">neuzin_tes_designation</custom-field>
+   </custom-fields>
+</wpml-config>
