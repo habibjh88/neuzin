@@ -40,11 +40,11 @@ if ( !class_exists( 'NeuzinTheme_Helper' ) ) {
 				$links[] = $paged + 2;
 				$links[] = $paged + 1;
 			}
-			include NEUZIN_VIEW_DIR . 'pagination.php';
+			include NEUZIN_INC_DIR . 'views/pagination.php';
 		}	
 
 		public static function comments_callback( $comment, $args, $depth ){
-			include NEUZIN_VIEW_DIR . 'comments-callback.php';
+			include NEUZIN_INC_DIR . 'views/comments-callback.php';
 		}
 
 

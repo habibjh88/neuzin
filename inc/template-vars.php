@@ -100,7 +100,6 @@ if( !function_exists( 'neuzin_template_vars' ) ) {
                 $prefix = 'search';
             }elseif( is_404() ) {
                 $prefix                                = 'error';
-                NeuzinTheme::neuzin_options($prefix . '_layout') = 'full-width';
             }elseif( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
                 $prefix = 'shop';
             }elseif( is_post_type_archive( "neuzin_service" ) || is_tax( "neuzin_service_category" ) ) {

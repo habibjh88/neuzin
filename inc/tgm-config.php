@@ -87,7 +87,7 @@ function neuzin_register_required_plugins()
 
     $config = array(
         'id'           => 'neuzin',                     // Unique ID for hashing notices for multiple instances of TGMPA.
-        'default_path' => NEUZIN_PLUGINS_DIR,           // Default absolute path to bundled plugins.
+        'default_path' => NEUZIN_INC_DIR . 'plugins/',           // Default absolute path to bundled plugins.
         'menu'         => 'neuzin-install-plugins',     // Menu slug.
         'has_notices'  => true,                         // Show admin notices or not.
         'dismissable'  => true,                         // If false, a user cannot dismiss the nag message.
