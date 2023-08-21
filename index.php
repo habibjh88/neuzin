@@ -16,7 +16,6 @@ $neuzin_is_post_archive = is_home() || ( is_archive() && get_post_type() == 'pos
 
 // CPT Redirection
 
-$cpt = NEUZIN_NAME;
 if ( is_post_type_archive( "neuzin_service" ) || is_tax( "neuzin_service_category" ) ) {
 		get_template_part( 'template-parts/archive', 'services' );
 	return;

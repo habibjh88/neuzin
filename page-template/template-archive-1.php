@@ -7,6 +7,7 @@
  * @version 1.0
  */
 
+use radiustheme\Neuzin\Helper;
 // Layout class
 if ( NeuzinTheme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
@@ -46,8 +47,8 @@ get_header(); ?>
 						<?php
 							echo '<div class="auto-clear">';
 							$i = 0;							
-							while ( have_posts() ) : the_post();					
-							neuzin_loadtemplate('template-parts/content-3', array('i' => $i ));
+							while ( have_posts() ) : the_post();
+                            Helper::neuzin_loadtemplate('template-parts/content-3', array('i' => $i ));
 							$i++;
 							endwhile;
 							echo '</div>';

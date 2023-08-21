@@ -9,6 +9,19 @@ namespace radiustheme\Neuzin;
 
 class Helper {
 
+
+	/**
+	 * neuzin loadt emplate
+	 * @param $templateurl
+	 * @param $data
+	 *
+	 * @return void
+	 */
+	public static function neuzin_loadtemplate( $templateurl, $data = [] ) {
+		extract( $data );
+		include locate_template( $templateurl . '.php', false, false );
+	}
+
 	/**
 	 * File require function
 	 *
