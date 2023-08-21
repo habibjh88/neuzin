@@ -11,10 +11,11 @@
 $neuzin_theme_data = wp_get_theme();
 do_action( 'neuzin_theme_init' );
 
-define( 'NEUZIN_VERSION', ( WP_DEBUG ) ? time() : $neuzin_theme_data->get( 'Version' ) );
-
+define( 'NEUZIN_VERSION', ( WP_DEBUG ) ? time() : '1.0.0' );
 // DIR
 define( 'NEUZIN_BASE_DIR', get_template_directory() . '/' );
+define( 'NEUZIN_AUTHOR_URI', 'http://radiustheme.com' );
+var_dump( NEUZIN_AUTHOR_URI );
 define( 'NEUZIN_INC_DIR', NEUZIN_BASE_DIR . 'inc/' );
 
 // URL
