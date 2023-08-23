@@ -12,7 +12,7 @@
     "watch": "mix watch",
     "prod": "npm run production",
     "production": "mix --production",
-    "package": "npm run clean && npm run build && npm run dev && npm run prod && npm run dev --package",
+    "package": "npm run clean && npm run dev && npm run prod && npm run dev --package",
     "clean": "rm -rf temp/*",
     "zip": "npm run package && npm run dev --zip",
     "build": "wp-scripts build --entry ./src/blocks/index.js --output-path=assets/blocks",
@@ -21,8 +21,7 @@
     "lint:js": "wp-scripts lint-js",
     "packages-update": "wp-scripts packages-update",
     "plugin-zip": "wp-scripts plugin-zip",
-    "start": "wp-scripts start --entry ./src/blocks/index.js --output-path=assets/blocks",
-    "elementor": "wp-scripts start --entry ./src/elementor/index.js --output-path=assets/elementor"
+    "start": "wp-scripts start --entry ./src/blocks/index.js --output-path=assets/blocks"
   },
   "dependencies": {
     "@wordpress/api-fetch": "^6.9.0",
