@@ -1,0 +1,342 @@
+/*-------------------------------------
+CSS INDEX
+===================================
+#. Defaults
+#. Topbar Layout
+#. Header Default
+    #. Header Logo
+    #. Main Navigation
+    #. Submenu
+    #. 3rd Level Menu
+    #. Multi Column Menu
+    #. Mobile Multi Column Menu
+    #. Header Icons
+    #. Header Right Menu
+    #. Sticky Header
+    #. Transparent Header
+#. Header Layout 1
+#. Header Layout 2
+#. Header Layout 3
+#. Header Layout 4
+#. Header Layout 5
+#. Header Layout 6
+#. Header Responsive
+#. Header Right Menu
+#. Preloader css
+#. Footer - Scroll to top, Copyright
+#. Widgets - Sidebar and Footer Widgets
+#. Banner
+#. Buttons
+#. Contents
+#. Default Blog layout
+#. Single Content
+#. Single Post Slider
+#. Related Post
+#. Comments
+#. Archive Contents
+#. Pagination
+#. Error 404
+#. Contact form
+#. Mail chimp form
+#. Woocommerce: Fix
+#. Woocommerce: Widgets
+#. Woocommerce: Owl Nav
+#. Woocommerce: Top Bar
+#. Woocommerce: Shop
+#. Woocommerce: Shop List View
+#. Woocommerce: Single Product
+#. Woocommerce: Cart
+#. Woocommerce: Checkout
+#. Woocommerce: Order received
+#. Woocommerce: My Account
+#. Woocommerce: Login/Register
+#. Woocommerce: Yith Wishlist
+#. Gutenberg Support
+---------------------------------------*/
+/*-------------------------------------
+#. Defaults
+---------------------------------------*/
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    color: #646464;
+    font-weight: 400;
+    height: 100%;
+    vertical-align: baseline;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #ffffff;
+    overflow: inherit;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+    margin: 0 0 20px 0;
+    color: #1d2124;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 34px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.primary-color {
+    color: #5a49f8;
+}
+
+.secondary-color {
+    color: #7a64f2;
+}
+
+.dark-color {
+    color: #750ed5;
+}
+
+.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
+}
+
+.alignleft {
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.alignright {
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+a {
+    color: #5a49f8;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0px solid;
+    text-decoration: none;
+    outline: 0 none;
+}
+
+a:active {
+    text-decoration: none;
+    outline: 0 none;
+}
+
+a:hover {
+    color: #7a64f2;
+    text-decoration: none;
+    outline: 0 none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.fix {
+    overflow: hidden;
+}
+
+p {
+    margin: 0 0 20px 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.clear:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+hr,
+.elementor hr {
+    background-color: #cccccc;
+}
+
+* {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+ul {
+    list-style: disc inside none;
+    margin: 0 0 20px 0;
+}
+
+span.new {
+    background: #ff1f1f;
+    font-size: 11px;
+    color: #fff;
+    padding: 3px 5px 2px;
+    border-radius: 5px;
+}
+
+span.hot {
+    background: blue;
+    font-size: 11px;
+    padding: 3px 5px 2px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#wrapper {
+    overflow: hidden;
+    transition: all 0.5s ease-out;
+}
+
+blockquote {
+    border-left: 2px solid #5a49f8;
+    margin: 40px 0;
+    position: relative;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    z-index: 1;
+    padding: 30px 40px 30px 150px;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
+    color: #111111;
+}
+
+blockquote:after {
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    font-size: 60px;
+    opacity: 0.1;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 3.125rem;
+    z-index: 1;
+}
+
+blockquote p {
+    position: relative;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 16px;
+    color: #5a49f8;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 12px;
+    position: relative;
+}
+
+blockquote.wp-block-quote cite {
+    display: block;
+    font-size: 16px;
+    color: #5a49f8;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 12px;
+}
+
+@media (max-width: 767px) {
+    blockquote {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+
+#page {
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.post-bottom-spacer {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.visibility-h {
+    visibility: hidden;
+}
+
+.elementor-widget-divider .elementor-divider-separator {
+    border-top-color: #dedede;
+}
+
+.fa-facebook-f:before,
+.fa-facebook:before {
+    content: "\f39e" !important;
+}
+
+.media {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.media-body {
+    -ms-flex: 1;
+    flex: 1;
+}

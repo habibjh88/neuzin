@@ -1,0 +1,192 @@
+
+/*----------------------
+#. Banner
+----------------------*/
+.entry-banner {
+    background: #f8f8f8;
+    position: relative;
+}
+.entry-banner:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+    background-image: -o-linear-gradient(30deg, #5a49f8 0%, #750ed5 93%);
+    background-image: linear-gradient(60deg, #5a49f8 0%, #750ed5 93%);
+}
+.entry-banner .entry-banner-content {
+    padding: 140px 0 145px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.entry-banner .entry-banner-content.center {
+    text-align: center;
+}
+.entry-banner .entry-banner-content.left {
+    text-align: left;
+}
+.entry-banner .entry-banner-content.right {
+    text-align: right;
+}
+.entry-banner .entry-banner-content h1 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 36px;
+}
+.entry-banner .entry-banner-content h1 a {
+    color: #ffffff;
+}
+.entry-banner .entry-banner-content h1 a:hover {
+    color: #646464;
+}
+.breadcrumb-area .entry-breadcrumb span,
+.breadcrumb-area .entry-breadcrumb span a {
+    color: #ffffff;
+}
+.breadcrumb-area .entry-breadcrumb span a:hover {
+    color: #cecece;
+}
+.breadcrumb-area .entry-breadcrumb > span:last-child {
+    color: #cecece;
+}
+.entry-banner .entry-breadcrumb .delimiter {
+    color: #ffffff;
+    padding: 0 7px;
+}
+.entry-banner .shape-holder {
+    margin: 0;
+    padding: 0;
+}
+.entry-banner .shape-holder li {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.entry-banner .shape-holder li:nth-child(1n) {
+    bottom: 2.8125rem;
+}
+.entry-banner .shape-holder li:nth-child(2n) {
+    bottom: 9.0625rem;
+}
+.entry-banner .shape-holder li:nth-child(3n) {
+    bottom: 15.3125rem;
+}
+.entry-banner .shape-holder li svg {
+    margin: 0 auto;
+}
+.entry-banner .shape-holder li.shape1 svg stop:first-child {
+    stop-color: #523fff;
+}
+.entry-banner .shape-holder li.shape1 svg stop:last-child {
+    stop-color: #750ed5;
+}
+.entry-banner .shape-holder li.shape2 svg stop:first-child {
+    stop-color: #523fff;
+}
+.entry-banner .shape-holder li.shape2 svg stop:last-child {
+    stop-color: #6d1adf;
+}
+.entry-banner .shape-holder li.shape3 svg stop:first-child {
+    stop-color: #523fff;
+}
+.entry-banner .shape-holder li.shape3 svg stop:last-child {
+    stop-color: #8221dd;
+}
+@media (max-width: 991px) {
+    .entry-banner .entry-banner-content {
+        padding: 80px 0 !important;
+    }
+    .entry-banner .entry-banner-content h1 {
+        font-size: 36px;
+    }
+    .entry-banner .shape-holder li {
+        left: -4%;
+    }
+    .entry-banner .shape-holder li:nth-child(3n) {
+        bottom: 11.3125rem;
+    }
+    .entry-banner .shape-holder li:nth-child(2n) {
+        bottom: 7.0625rem;
+    }
+}
+@media (max-width: 480px) {
+    .entry-banner .shape-holder li:nth-child(1n) {
+        left: -48%;
+    }
+    .entry-banner .shape-holder li:nth-child(2n) {
+        left: -23%;
+    }
+    .entry-banner .shape-holder li:nth-child(3n) {
+        left: -3%;
+    }
+}
+@media (max-width: 320px) {
+    .entry-banner .shape-holder li:nth-child(1n) {
+        left: -80%;
+    }
+    .entry-banner .shape-holder li:nth-child(2n) {
+        left: -48%;
+    }
+    .entry-banner .shape-holder li:nth-child(3n) {
+        left: -18%;
+    }
+}
+/*transprant banner*/
+.trheader .entry-banner .entry-banner-content {
+    padding-top: 200px;
+    padding-bottom: 150px;
+}
+@media (max-width: 992px) {
+    .trheader .entry-banner .entry-banner-content {
+        padding-top: 90px;
+    }
+}
+@media (max-width: 768px) {
+    .trheader .entry-banner .entry-banner-content {
+        padding-top: 40px;
+    }
+}
+/*breadcrumb*/
+.breadcrumb-trail ul.trail-items {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+.breadcrumb-trail ul.trail-items li {
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    padding-right: 16px;
+    margin-right: 12px;
+    color: #5a49f8;
+}
+.breadcrumb-trail ul.trail-items li:after {
+    position: absolute;
+    content: "-";
+    right: 0;
+    top: 0;
+}
+.breadcrumb-trail ul.trail-items li:last-child:after {
+    display: none;
+}
+.breadcrumb-trail ul.trail-items li a {
+    color: #5a49f8;
+}
+.breadcrumb-trail ul.trail-items li a:hover {
+    color: #646464;
+}
+.breadcrumb-trail ul.trail-items li > span {
+    color: #646464;
+}
+.banner-text {
+    line-height: 1.4;
+}
+.site-main .entry-breadcrumb .current {
+    color: #5a49f8;
+}

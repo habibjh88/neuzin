@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  DevOfWP
  * @since   1.0
  * @version 1.0
  */
@@ -15,7 +15,7 @@ function neuzin_register_required_plugins()
             'slug'         => 'neuzin-core',
             'source'       => 'neuzin-core.zip',
             'required'     =>  true,
-            'external_url' => 'http://radiustheme.com',
+            'external_url' => 'http://devofwp.com',
             'version'      => '2.0.0'
         ),
         array(
@@ -23,7 +23,7 @@ function neuzin_register_required_plugins()
             'slug'         => 'rt-framework',
             'source'       => 'rt-framework.zip',
             'required'     =>  true,
-            'external_url' => 'http://radiustheme.com',
+            'external_url' => 'http://devofwp.com',
             'version'      => '2.0'
         ),
         array(
@@ -31,7 +31,7 @@ function neuzin_register_required_plugins()
             'slug'         => 'rt-demo-importer',
             'source'       => 'rt-demo-importer.zip',
             'required'     =>  true,
-            'external_url' => 'http://radiustheme.com',
+            'external_url' => 'http://devofwp.com',
             'version'      => '6.0.1'
         ),
         array(

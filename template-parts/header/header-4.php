@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  DevOfWP
  * @since   1.0
  * @version 1.0
  */

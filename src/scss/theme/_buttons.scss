@@ -1,0 +1,84 @@
+
+/*-------------------------------------
+#. Buttons
+---------------------------------------*/
+button:focus {
+    outline: none;
+}
+/*button-gradient-1*/
+.button-gradient-1 {
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+    padding: 12px 28px;
+    border-radius: 4px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #5a49f8;
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+.button-gradient-1:hover {
+    color: #ffffff;
+}
+.button-gradient-1:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    right: inherit;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 4px;
+    background: #5a49f8;
+    background: -o-linear-gradient(205deg, #5a49f8 40%, #7a64f2 100%);
+    background: linear-gradient(245deg, #5a49f8 40%, #7a64f2 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.button-gradient-1:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    right: inherit;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 4px;
+    background: #5a49f8;
+    background-image: -o-linear-gradient(30deg, #5a49f8 0%, #7a64f2 100%);
+    background-image: linear-gradient(60deg, #5a49f8 0%, #7a64f2 100%);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease-in-out;
+}
+.button-gradient-1:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+.button-gradient-1:hover:after {
+    opacity: 0;
+    visibility: hidden;
+}
+.button-gradient-1 i {
+    margin-top: 0.125rem;
+    line-height: 1;
+    margin-left: 12px;
+    transform: translateX(0px);
+    color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+.button-gradient-1:hover i {
+    transform: translateX(5px);
+}

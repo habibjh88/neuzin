@@ -1,0 +1,39 @@
+
+/*-------------------------------------
+#. Error 404
+---------------------------------------*/
+.error-page-area {
+    position: relative;
+}
+.error-page-content {
+    position: relative;
+    text-align: center;
+    z-index: 9;
+}
+.error-page-content .text-1 {
+    font-size: 2.875rem;
+    color: #1d2124;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+.error-page-content .text-2 {
+    width: 50%;
+    margin: 1.875rem auto 1.875rem;
+    color: #646464;
+}
+.error-page-area .error-page-content .go-home {
+    margin-top: 3.125rem;
+}
+@media (max-width: 767px) {
+    .error-page-content .text-1 {
+        font-size: 1.875rem;
+        padding: 0 15px;
+    }
+    .error-page-content .text-2 {
+        width: 90%;
+    }
+    .error404 .error-page-area {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}

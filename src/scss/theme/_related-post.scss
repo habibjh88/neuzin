@@ -1,0 +1,132 @@
+
+/*-------------------------------------
+#. Related Post
+---------------------------------------*/
+.cat-holder {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.cat-holder-text {
+    position: relative;
+    color: #fff;
+    height: 26px;
+    padding: 0 15px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    z-index: 2;
+    background-color: #5a49f8;
+}
+.cat-holder:before {
+    border-right: 8px solid transparent;
+    border-top: 8px solid #5a49f8;
+}
+.cat-holder:before {
+    z-index: 1;
+    content: "";
+    top: 0;
+    right: -8px;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+.cat-holder:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.rt-related-post {
+    margin-bottom: 40px;
+}
+.rt-related-post .img-scale-animate {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+.rt-related-post .img-scale-animate:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+}
+.rt-related-post .img-scale-animate:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    content: "";
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+}
+.rt-related-post .position-relative:hover .img-scale-animate:before {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.rt-related-post .position-relative:hover .img-scale-animate:after {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.rt-related-post .title-section {
+    margin-bottom: 30px;
+}
+.rt-related-post-info .post-date {
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+.rt-related-post-info .post-date ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0px;
+    line-height: 1.4;
+}
+.rt-related-post-info .post-date ul li {
+    color: #9b9b9b;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+}
+.rt-related-post-info .post-date ul li:last-child {
+    position: relative;
+    margin-right: 0;
+}
+.rt-related-post-info .post-date ul li:after {
+    content: "/";
+    position: absolute;
+    top: 0;
+    right: -13px;
+}
+.rt-related-post-info .post-date ul li:last-child:after {
+    display: none;
+}
+.rt-related-post-info .post-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 0px;
+}
+.rt-related-post-info .post-title a {
+    color: #1d2124;
+}
+.rt-related-post-info .post-title a:hover {
+    color: #5a49f8;
+}

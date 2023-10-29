@@ -1,11 +1,11 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  DevOfWP
  * @since   1.0
  * @version 1.0
  */
 
- /*CREDIT : Jannah theme( TieLab ), Modified By RadiusTheme*/
+ /*CREDIT : Jannah theme( TieLab ), Modified By DevOfWP*/
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

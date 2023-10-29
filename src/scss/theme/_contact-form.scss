@@ -1,0 +1,198 @@
+
+
+/*-------------------------------------
+#. Contact form
+---------------------------------------*/
+div.wpcf7 .ajax-loader {
+    position: absolute;
+}
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+    border: 1px solid #7a64f2;
+    color: #7a64f2;
+    margin: 10px 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+span.wpcf7-not-valid-tip {
+    color: #7a64f2;
+    font-size: 13px;
+}
+.contact-form .form-group {
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+.contact-form .form-group i {
+    position: absolute;
+    top: 19px;
+    left: 20px;
+    color: #cdcccc;
+    z-index: 1;
+}
+.contact-form .form-group .form-control {
+    background: #ffffff;
+    box-shadow: none;
+    color: #111111;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 15px 20px 15px 20px;
+}
+.contact-form .form-group .form-control:focus {
+    border: 1px solid #7a64f2;
+}
+.contact-form .form-group input.form-control {
+    height: 55px;
+}
+.contact-form .form-group input.form-control::-webkit-input-placeholder,
+.contact-form .form-group textarea.form-control::-webkit-input-placeholder {
+    color: #b8b8b8;
+}
+.contact-form .form-group input.form-control:-ms-input-placeholder,
+.contact-form .form-group textarea.form-control:-ms-input-placeholder {
+    color: #b8b8b8;
+}
+.contact-form .form-group input.form-control:-moz-placeholder,
+.contact-form .form-group textarea.form-control:-moz-placeholder {
+    color: #b8b8b8;
+}
+.contact-form .form-group.text-left {
+    margin-bottom: 0;
+}
+.contact-form .form-group .button-gradient-1 i {
+    position: inherit;
+    top: inherit;
+    left: inherit;
+    color: inherit;
+}
+.contact-form .form-group.text-center {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+/*Contact transparent*/
+.contact-transparent .contact-form .form-group .form-control {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+}
+.contact-transparent .contact-form .form-group i {
+    color: #dfdfdf;
+}
+.contact-transparent .wpcf7-not-valid-tip {
+    color: #dfdfdf;
+}
+.contact-transparent .wpcf7-validation-errors,
+.contact-transparent .wpcf7-acceptance-missing {
+    border: 1px solid #dfdfdf;
+    color: #dfdfdf;
+}
+.contact-transparent
+.contact-form
+.form-group
+input.form-control::-webkit-input-placeholder,
+.contact-transparent
+.contact-form
+.form-group
+textarea.form-control::-webkit-input-placeholder {
+    color: #dfdfdf;
+}
+.contact-transparent
+.contact-form
+.form-group
+input.form-control:-ms-input-placeholder,
+.contact-transparent
+.contact-form
+.form-group
+textarea.form-control:-ms-input-placeholder {
+    color: #dfdfdf;
+}
+.contact-transparent
+.contact-form
+.form-group
+input.form-control:-moz-placeholder,
+.contact-transparent
+.contact-form
+.form-group
+textarea.form-control:-moz-placeholder {
+    color: #dfdfdf;
+}
+/* Help form */
+.row.gutters-10 {
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+}
+.row.gutters-10 > [class^="col-"] {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+}
+.help-form .form-group {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+.help-form .form-group select {
+    width: 100%;
+    height: 50px;
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    padding: 0 10px;
+    color: #b8b8b8;
+    box-shadow: none;
+}
+.help-form .form-group select option {
+    color: #646464;
+}
+.help-form .form-group .form-control {
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    outline: none;
+}
+.help-form .form-group select:focus,
+.help-form .form-group .form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #7a64f2;
+}
+.help-form .form-group input.form-control {
+    height: 50px;
+}
+.help-form .form-group input.form-control::-webkit-input-placeholder,
+.help-form .form-group textarea.form-control::-webkit-input-placeholder,
+.help-form .form-group select::-webkit-input-placeholder {
+    color: #b8b8b8;
+}
+.help-form .form-group input.form-control:-ms-input-placeholder,
+.help-form .form-group textarea.form-control:-ms-input-placeholder,
+.help-form .form-group select:-ms-input-placeholder {
+    color: #b8b8b8;
+}
+.help-form .form-group input.form-control:-moz-placeholder,
+.help-form .form-group textarea.form-control:-moz-placeholder,
+.help-form .form-group select:-moz-placeholder {
+    color: #b8b8b8;
+}
+.help-form .form-group.text-left {
+    margin-bottom: 0px;
+}
+.help-form .ajax-loader {
+    position: absolute;
+}
+.help-form .response {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+}
+.help-form div.wpcf7-validation-errors,
+.help-form div.wpcf7-acceptance-missing {
+    border: 1px solid #f8d7da;
+    border-radius: 4px;
+    color: #7a64f2;
+    background-color: #f8d7da;
+    margin: 0;
+    padding: 10px 15px;
+    line-height: 1.4;
+}
+.help-form span.wpcf7-not-valid-tip {
+    color: #7a64f2;
+}

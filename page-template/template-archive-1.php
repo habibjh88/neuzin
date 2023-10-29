@@ -2,12 +2,12 @@
 /**
  * Template Name: Archive style 1
  * 
- * @author  RadiusTheme
+ * @author  DevOfWP
  * @since   1.0
  * @version 1.0
  */
 
-use radiustheme\Neuzin\Helper;
+use devofwp\Neuzin\Helper;
 // Layout class
 if ( NeuzinTheme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';

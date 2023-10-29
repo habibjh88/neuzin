@@ -1,11 +1,11 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  DevOfWP
  * @since   1.0
  * @version 1.0
  */
 
-namespace radiustheme\Neuzin_Core;
+namespace devofwp\Neuzin_Core;
 
 use NeuzinTheme;
 use NeuzinTheme_Helper;

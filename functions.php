@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  DevOfWP
  *
  * @since   1.0
  *
@@ -14,7 +14,7 @@ do_action( 'neuzin_theme_init' );
 define( 'NEUZIN_VERSION', ( WP_DEBUG ) ? time() : '1.0.0' );
 // DIR
 define( 'NEUZIN_BASE_DIR', get_template_directory() . '/' );
-define( 'NEUZIN_AUTHOR_URI', 'http://radiustheme.com' );
+define( 'NEUZIN_AUTHOR_URI', 'http://devofwp.com' );
 define( 'NEUZIN_INC_DIR', NEUZIN_BASE_DIR . 'inc/' );
 
 // URL

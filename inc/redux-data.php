@@ -270,7 +270,7 @@
    "copyright_color":"#646464",
    "copy_link_color":"#646464",
    "copy_link_hover_color":"#5a49f8",
-   "copyright_text":"&copy; 2023 neuzin. All Rights Reserved by <a target=\"_blank\" rel=\"nofollow\" href=\"http://radiustheme.com\">RadiusTheme</a>",
+   "copyright_text":"&copy; 2023 neuzin. All Rights Reserved by <a target=\"_blank\" rel=\"nofollow\" href=\"http://devofwp.com\">DevOfWP</a>",
    "typo_body":{
       "font-family":"Roboto",
       "font-options":"",

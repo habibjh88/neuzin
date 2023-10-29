@@ -1,0 +1,21 @@
+
+/*-------------------------------------
+#. Forms
+---------------------------------------*/
+form.post-password-form label > input {
+    background: #ffffff;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    padding: 10px 8px;
+}
+form.post-password-form input[type="submit"] {
+    border-radius: 4px;
+    background: #5a49f8;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease-out;
+}
+form.post-password-form input[type="submit"]:hover {
+    background: #7a64f2;
+    color: #ffffff;
+}

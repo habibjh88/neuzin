@@ -1,0 +1,207 @@
+
+/*Offscreen menu*/
+.rt-slide-nav::-webkit-scrollbar {
+    width: 0;
+}
+#meanmenu {
+    position: relative;
+}
+.mean-bar .header-action-items {
+    position: absolute;
+    top: 14px;
+    right: 67px;
+}
+.mean-container .mean-bar {
+    width: 100%;
+    position: relative;
+    background: #ffffff;
+    padding: 10px 0;
+    z-index: 999999;
+    border-bottom: 2px solid #26c6da;
+}
+.offscreen-navigation .sub-menu {
+    padding: 0px;
+    display: none;
+}
+.offscreen-navigation li > a {
+    display: block;
+    position: relative;
+    color: #4c4b4b;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 30px;
+}
+.offscreen-navigation .sub-menu li {
+    border-top: 1px dashed #ddd;
+}
+.offscreen-navigation .sub-menu li > a {
+    font-size: 14px;
+    font-weight: 500;
+}
+.offscreen-navigation .menu > li {
+    padding: 0px;
+    border-top: 1px dashed #ddd;
+}
+.offscreen-navigation ul li a:before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-size: 10px;
+    font-weight: 900;
+    color: #7a64f2;
+    transition: all 0.3s ease-out;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+}
+.offscreen-navigation ul li {
+    position: relative;
+}
+.offscreen-navigation .sub-menu li a {
+    padding-left: 50px;
+}
+.mean-container ul.sub-menu li a:before {
+    left: 35px;
+}
+.offscreen-navigation .sub-menu .sub-menu li a {
+    padding-left: 70px;
+}
+.mean-container .sub-menu ul.sub-menu li a:before {
+    left: 55px;
+}
+.offscreen-navigation .sub-menu .sub-menu .sub-menu li a {
+    padding-left: 90px;
+}
+.mean-container .sub-menu .sub-menu ul.sub-menu li:before {
+    left: 75px;
+}
+@media only screen and (min-width: 1025px) {
+    #meanmenu {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1025px) {
+    #masthead {
+        display: none;
+    }
+}
+.mean-bar .header-btn-new.mobile-btn {
+    position: absolute;
+    right: 12%;
+    top: 8px;
+}
+.mean-bar .sidebarBtn {
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+.header-style-2 .rt-header-menu {
+    background: transparent;
+}
+
+.rt-slide-nav {
+    position: absolute;
+    background: white;
+    width: 100%;
+    left: 0;
+    z-index: 99;
+    display: none;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    box-shadow: 0px 0px 10px 0px #0000001c;
+}
+.slidemenuon .rt-slide-nav {
+    display: block;
+}
+.rt-slide-nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+}
+.rt-slide-nav .offscreen-navigation ul li {
+    position: relative;
+}
+.rt-slide-nav .offscreen-navigation ul li > span {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    cursor: pointer;
+}
+.rt-slide-nav .offscreen-navigation ul li > span:after {
+    color: #5a49f8;
+    content: "+";
+    display: inline-block;
+    transition: 0.1s;
+}
+.rt-slide-nav .offscreen-navigation ul li > span.open:after {
+    content: '-';
+}
+#meanmenu .mean-bar .logo-small {
+    width: 120px;
+}
+body.slidemenuon {
+    /*	overflow: hidden;*/
+}
+
+.mean-container .mean-bar .button-btn {
+    position: absolute;
+    right: 100px;
+    top: 14px;
+    border: 1px solid #5a49f8;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.mean-container .mean-bar .barsearch {
+    position: absolute;
+    right: 46px;
+    top: 20px;
+    font-weight: 700;
+    line-height: 1;
+}
+.mean-container .mean-bar .barsearch i:before {
+    font-size: 18px;
+}
+.mean-container .mean-bar a {
+    display: inline-block;
+    padding: 0 15px;
+}
+.mean-container .mean-bar .cart-icon-area {
+    position: absolute;
+    right: 215px;
+    top: 11px;
+}
+@media (max-width: 425px) {
+    .mean-container .mean-bar .button-btn {
+        right: 87px;
+    }
+    .mean-container .mean-bar .barsearch {
+        right: 40px;
+    }
+    .mean-container .mean-bar .cart-icon-area {
+        right: 200px;
+    }
+}
+@media (max-width: 320px) {
+    .mean-container .mean-bar .button-btn {
+        right: 82px;
+        padding: 0 7px;
+        line-height: 1.8;
+        top: 14px;
+        font-size: 14px;
+        display: none;
+    }
+    .mean-container .mean-bar .barsearch {
+        right: 38px;
+    }
+    .mean-container .mean-bar .cart-icon-area {
+        right: 75px;
+    }
+}

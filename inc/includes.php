@@ -1,13 +1,13 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  DevOfWP
  *
  * @since   1.0
  *
  * @version 1.0
  */
 
-use radiustheme\Neuzin\Helper;
+use devofwp\Neuzin\Helper;
 
 Helper::requires( 'icon-trait.php' );
 Helper::requires( 'icon-trait.php' );

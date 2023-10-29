@@ -1,8 +1,8 @@
-# Copyright (C) 2023 Meuzin
-# This file is distributed under the same license as the Meuzin package.
+# Copyright (C) 2023 Neuzin
+# This file is distributed under the same license as the Neuzin package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Meuzin\n"
+"Project-Id-Version: Neuzin\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

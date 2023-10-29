@@ -1,6 +1,6 @@
 <?php
 /**
- * @author  RadiusTheme
+ * @author  DevOfWP
  *
  * @since   1.0
  *
@@ -1689,7 +1689,7 @@ Redux::setSection($opt_name, [
 			'id'       => 'copyright_text',
 			'type'     => 'textarea',
 			'title'    => esc_html__('Copyright Text', 'neuzin'),
-			'default'  => '&copy; ' . date('Y') . ' neuzin. All Rights Reserved by <a target="_blank" rel="nofollow" href="' . NEUZIN_AUTHOR_URI . '">RadiusTheme</a>',
+			'default'  => '&copy; ' . date('Y') . ' neuzin. All Rights Reserved by <a target="_blank" rel="nofollow" href="' . NEUZIN_AUTHOR_URI . '">DevOfWP</a>',
 			'required' => ['copyright_area', 'equals', true],
 		],
 	],

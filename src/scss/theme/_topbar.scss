@@ -1,0 +1,189 @@
+
+/*-------------------------------------
+#. Topbar Layout
+---------------------------------------*/
+.header-top-bar {
+    border-bottom: none;
+    padding: 8px 0;
+    font-size: 15px;
+}
+.header-top-bar .tophead-right ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.header-top-bar .tophead-left ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.header-top-bar .tophead-right ul li:last-child {
+    margin-right: 0;
+}
+.header-top-bar .tophead-left ul li {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 15px;
+}
+.header-top-bar .tophead-left ul li:last-child {
+    margin-right: 0;
+}
+.header-top-bar .tophead-social li {
+    display: inline-block;
+}
+.header-top-bar .tophead-social li:first {
+    padding-left: 0;
+}
+.header-top-bar .tophead-right .tophead-social li a i {
+    padding-right: 0;
+}
+.header-top-bar .top-bar-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*Top bar widget*/
+.header-top-bar .widget {
+    margin-bottom: 0;
+}
+.header-top-bar .widget ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.header-top-bar .widget ul li:last-child {
+    margin-right: 0;
+}
+.mean-container .mean-nav ul.menu {
+    overflow-y: scroll;
+}
+.mean-container .mean-nav ul li.current_page_item > a,
+.mean-container .mean-nav ul li.current-menu-parent > a {
+    color: #7a64f2;
+}
+/*Top Bar Style 1*/
+.topbar-style-1 .header-top-bar {
+    background-color: #5a49f8;
+    color: #c6ceec;
+    padding: 0;
+}
+.topbar-style-1 .header-top-bar a {
+    color: #c6ceec;
+}
+.topbar-style-1 .header-top-bar .tophead-right i,
+.topbar-style-1 .header-top-bar .tophead-left i:before {
+    color: #c6ceec;
+}
+.topbar-style-1 .tophead-left {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+.topbar-style-1 .tophead-left .email-address {
+    margin-left: 20px;
+}
+.topbar-style-1 .tophead-left .email-address i {
+    padding-right: 8px;
+}
+.topbar-style-1 .tophead-right i {
+    padding-right: 8px;
+}
+/*Top Bar Style 2*/
+.topbar-style-2 .header-top-bar {
+    background-color: #e7f1ff;
+    border-bottom: none;
+    color: #646464;
+}
+.topbar-style-2 .header-top-bar a {
+    color: #646464;
+    transition: all 0.3s ease-out;
+}
+.topbar-style-2 .header-top-bar .tophead-right i,
+.topbar-style-2 .header-top-bar .tophead-left i:before {
+    color: #646464;
+    transition: all 0.3s ease-out;
+}
+.topbar-style-2 .header-top-bar .tophead-right a:hover i,
+.topbar-style-2 .header-top-bar .tophead-left a:hover i:before {
+    color: #7a64f2;
+}
+.topbar-style-2 .tophead-left .address i {
+    margin-right: 10px;
+    position: relative;
+}
+.topbar-style-2 .tophead-left .address i:before {
+    margin-left: 0;
+}
+.topbar-style-2 .tophead-right ul li {
+    margin-right: 20px;
+}
+.topbar-style-2 .tophead-left {
+    display: flex;
+}
+.topbar-style-2 .tophead-left .email-address,
+.topbar-style-4 .tophead-left .email-address,
+.topbar-style-4 .tophead-right .tophead-social {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+.topbar-style-2 .tophead-left .email-address i {
+    margin-right: 8px;
+}
+.topbar-style-2 .tophead-left .email-address:before {
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 1px;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #c2c2c2;
+}
+/*Top Bar Style 4*/
+.topbar-style-4 .tophead-left {
+    display: flex;
+}
+.topbar-style-4 .header-top-bar {
+    color: #ececec;
+}
+.topbar-style-4.trheader .header-top-bar {
+    border-bottom: 1px solid rgb(228 228 228 / 25%);
+}
+.topbar-style-4 .tophead-right {
+    display: flex;
+    align-items: center;
+}
+.topbar-style-4 .tophead-left .email-address:before,
+.topbar-style-4 .tophead-right .tophead-social:before {
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 1px;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(228 228 228 / 25%);
+}
+.topbar-style-4 .tophead-left .email-address i,
+.topbar-style-4 .tophead-right .phone i {
+    margin-right: 8px;
+}
+.topbar-style-4 .header-top-bar a{
+    color: #d7d7d7;
+}
+.topbar-style-4 .header-top-bar a:hover {
+    color: #fff;
+}
+/* Transparent Topbar */
+.topbar-style-1.trheader .header-top-bar {
+    border-bottom: 1px solid #e2dede;
+}
+.topbar-style-1.trheader .header-top-bar {
+    background: transparent;
+}
+.trheader.has-topbar .entry-banner .container {
+    padding-top: 34px;
+}
+.header-top-bar {
+    min-height: 34px;
+}

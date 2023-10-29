@@ -2,7 +2,7 @@
 /**
  * Template Name: Blog 2
  * 
- * @author  RadiusTheme
+ * @author  DevOfWP
  * @since   1.0
  * @version 1.0
  */

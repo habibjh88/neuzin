@@ -27,7 +27,7 @@ class Helper {
 	 *
 	 * @var string
 	 */
-	private $license_url = 'https://envato.radiustheme.com/license-check';
+	private $license_url = 'https://envato.devofwp.com/license-check';
 
 	/**
 	 * Theme Name
@@ -212,7 +212,7 @@ class Helper {
 	 * @return void
 	 */
 	public function license_note_callback() {
-		$support = 'https://www.radiustheme.com/contact/';
+		$support = 'https://www.devofwp.com/contact/';
 		$status  = sprintf(
 				/* translators: Support Center */
 			__( 'Please keep in mind, you can activate one license in one domain, if you face any problem in activation, please contact our <a href="%s" target="_blank">Support Center</a>', 'neuzin' ),
