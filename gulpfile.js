@@ -49,9 +49,13 @@ gulp.task('build-css', () => {
         'assets/css/animate.min.css',
         'assets/css/default.css',
         'assets/css/elementor.css',
-        // 'assets/css/jquery.pagepiling.min.css',
         'assets/css/jquery.timepicker.min.css',
+        'assets/css/jquery.pagepiling.min.css',
         'assets/css/select2.min.css',
+        'assets/css/owl.carousel.min.css',
+        'assets/css/owl.theme.default.min.css',
+        'assets/css/magnific-popup.css',
+        'assets/css/nivo-slider.min.css',
         'assets/css/style.css',
     ])
         .pipe(concat('styles.min.css'))
@@ -60,6 +64,7 @@ gulp.task('build-css', () => {
 });
 
 // Concat and minify vendor css files
+/*
 gulp.task('build-vendor-css', () => {
     return gulp.src([
         'assets/vendor/bootstrap/bootstrap.min.css',
@@ -72,6 +77,7 @@ gulp.task('build-vendor-css', () => {
         .pipe(cleanCss())
         .pipe(gulp.dest('assets/build'));
 });
+*/
 
 // Concat and minify js files
 gulp.task('build-js', () => {
@@ -86,18 +92,30 @@ gulp.task('build-js', () => {
 // Concat and minify vendor js files
 gulp.task('build-vendor-js', () => {
     return gulp.src([
-        'assets/vendor/bootstrap/popper.min.js',
-        'assets/vendor/bootstrap/bootstrap.min.js',
-        'assets/vendor/appear/jquery.appear.min.js',
-        'assets/vendor/magnific-popup/jquery.magnific-popup.min.js',
-        'assets/vendor/audio/audioplayer.js',
-        'assets/vendor/masonary/masonry.min.js',
-        'assets/vendor/swiper/swiper.min.js',
-        'assets/vendor/counterup/jquery.waypoints.min.js',
-        'assets/vendor/counterup/jquery.counterup.min.js',
-        'assets/vendor/wow/wow.min.js'
+        'assets/vendor/select2.min.js',
+        'assets/vendor/jquery.navpoints.js',
+        'assets/vendor/jquery.countdown.min.js',
+        'assets/vendor/js.cookie.min.js',
+        'assets/vendor/owl.carousel.min.js',
+        'assets/vendor/jquery.nivo.slider.min.js',
+        'assets/vendor/waypoints.min.js',
+        'assets/vendor/jquery.counterup.min.js',
+        'assets/vendor/jquery.knob.js',
+        'assets/vendor/jquery.appear.js',
+        'assets/vendor/jquery.magnific-popup.min.js',
+        'assets/vendor/theia-sticky-sidebar.min.js',
+        'assets/vendor/isotope.pkgd.min.js',
+        'assets/vendor/isotope-func.js',
+        'assets/vendor/jquery.timepicker.min.js',
+        'assets/vendor/tilt.jquery.js',
+        'assets/vendor/jquery.parallax-scroll.js',
+        'assets/vendor/jquery.pagepiling.min.js',
+        'assets/vendor/popper.js',
+        'assets/vendor/bootstrap.min.js',
+        'assets/js/main.js'
     ])
-        .pipe(concat('vendor.min.js'))
+        .pipe(concat('scripts.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('assets/build'));
 });
 
@@ -116,12 +134,13 @@ gulp.task('zip', function () {
         .pipe(gulp.dest('__build'));
 });
 
-// TODO: should add these tasks after - 'build-vendor-css', 'build-js', 'build-vendor-js'
+//'build-js','build-vendor-js',
 gulp.task('watch', function () {
     gulp.watch('src/scss/**/*.scss', gulp.series( 'scss', 'build-css', 'rtl' ));
+    gulp.watch('assets/js/main.js', gulp.series( 'build-vendor-js'));
 });
 
-gulp.task('run', gulp.series('scss', 'build-css', 'build-vendor-css', 'build-js', 'build-vendor-js', 'rtl' ));
+gulp.task('run', gulp.series('scss', 'build-css', 'build-vendor-js', 'rtl' ));
 
 gulp.task('build', gulp.series('run', 'clean', 'zip'));
 
