@@ -18,8 +18,8 @@ Helper::requires( 'theme.php' );
 Helper::requires( 'general.php' );
 Helper::requires( 'scripts.php' );
 Helper::requires( 'template-vars.php' );
-Helper::requires( 'lc-helper.php' );
-Helper::requires( 'lc-utility.php' );
+//Helper::requires( 'lc-helper.php' );
+//Helper::requires( 'lc-utility.php' );
 
 // Includes Modules
 Helper::requires( 'rt-post-related.php', 'inc/modules' );

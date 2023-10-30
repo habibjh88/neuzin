@@ -383,7 +383,7 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 }
 
 // Footer Html
-add_action( 'wp_footer', 'neuzin_footer_html', 1 );
+//add_action( 'wp_footer', 'neuzin_footer_html', 1 );
 if( !function_exists( 'neuzin_footer_html' ) ) {
 	function neuzin_footer_html(){
 		// Back-to-top link

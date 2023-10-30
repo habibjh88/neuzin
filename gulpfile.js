@@ -49,9 +49,8 @@ gulp.task('build-css', () => {
         'assets/css/animate.min.css',
         'assets/css/default.css',
         'assets/css/elementor.css',
-        'assets/css/jquery.pagepiling.min.css',
+        // 'assets/css/jquery.pagepiling.min.css',
         'assets/css/jquery.timepicker.min.css',
-        'assets/css/magnific-popup.css',
         'assets/css/select2.min.css',
         'assets/css/style.css',
     ])
