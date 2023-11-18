@@ -4,12 +4,13 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
 if ( !isset( $content_width ) ) {
 	$content_width = 1200;
 }
 
 add_action('after_setup_theme', 'neuzin_setup');
+
 if ( !function_exists( 'neuzin_setup' ) ) {
 	function neuzin_setup() {
 		// Language
@@ -217,8 +218,8 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 			'after_title'   => '</h3>',
 		) );		
 		/*footer 1*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_1')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_1');
+		if ( !empty(Theme::neuzin_options('footer_column_1')) ){
+			$item_widget = Theme::neuzin_options('footer_column_1');
 		} else {
 			$item_widget = 4;
 		}		
@@ -228,13 +229,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-1-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
 		/*footer 2*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_2')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_2');
+		if ( !empty(Theme::neuzin_options('footer_column_2')) ){
+			$item_widget = Theme::neuzin_options('footer_column_2');
 		} else {
 			$item_widget = 4;
 		}		
@@ -244,13 +245,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-2-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}		
 		/*footer 3*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_3')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_3');
+		if ( !empty(Theme::neuzin_options('footer_column_3')) ){
+			$item_widget = Theme::neuzin_options('footer_column_3');
 		} else {
 			$item_widget = 4;
 		}		
@@ -260,13 +261,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-3-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
 		/*footer 4*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_4')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_4');
+		if ( !empty(Theme::neuzin_options('footer_column_4')) ){
+			$item_widget = Theme::neuzin_options('footer_column_4');
 		} else {
 			$item_widget = 4;
 		}		
@@ -276,13 +277,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-4-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
 		/*footer 5*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_5')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_5');
+		if ( !empty(Theme::neuzin_options('footer_column_5')) ){
+			$item_widget = Theme::neuzin_options('footer_column_5');
 		} else {
 			$item_widget = 4;
 		}		
@@ -292,13 +293,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-5-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
 		/*footer 6*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_6')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_6');
+		if ( !empty(Theme::neuzin_options('footer_column_6')) ){
+			$item_widget = Theme::neuzin_options('footer_column_6');
 		} else {
 			$item_widget = 4;
 		}		
@@ -308,13 +309,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-6-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
 		/*footer 7*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_7')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_7');
+		if ( !empty(Theme::neuzin_options('footer_column_7')) ){
+			$item_widget = Theme::neuzin_options('footer_column_7');
 		} else {
 			$item_widget = 4;
 		}		
@@ -324,13 +325,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-7-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
 		/*footer 8*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_8')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_8');
+		if ( !empty(Theme::neuzin_options('footer_column_8')) ){
+			$item_widget = Theme::neuzin_options('footer_column_8');
 		} else {
 			$item_widget = 4;
 		}		
@@ -340,13 +341,13 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-8-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
 		/*footer 9*/
-		if ( !empty(NeuzinTheme::neuzin_options('footer_column_9')) ){
-			$item_widget = NeuzinTheme::neuzin_options('footer_column_9');
+		if ( !empty(Theme::neuzin_options('footer_column_9')) ){
+			$item_widget = Theme::neuzin_options('footer_column_9');
 		} else {
 			$item_widget = 4;
 		}		
@@ -356,7 +357,7 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 				'id'            => 'footer-style-9-'. $i,
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+				'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 				'after_title'   => '</h3>',
 			) );
 		}
@@ -366,7 +367,7 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 			'id'            => 'footer4_top_widget',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+			'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 			'after_title'   => '</h3>',
 		) );
 		/*copyright*/
@@ -375,7 +376,7 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 			'id'            => 'copyright_widget',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widgettitle '. NeuzinTheme::$footer_style .'">',
+			'before_title'  => '<h3 class="widgettitle '. Theme::$footer_style .'">',
 			'after_title'   => '</h3>',
 		) );
 		
@@ -387,7 +388,7 @@ if ( !function_exists( 'neuzin_widgets_register' ) ) {
 if( !function_exists( 'neuzin_footer_html' ) ) {
 	function neuzin_footer_html(){
 		// Back-to-top link
-		if ( NeuzinTheme::neuzin_options('back_to_top') ){
+		if ( Theme::neuzin_options('back_to_top') ){
 			echo '<a href="#" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>';
 		}
 	}	
@@ -581,11 +582,11 @@ if( ! function_exists( 'neuzin_get_time' )){
 		$post = get_post();
 		
 		# Date is disabled globally ----------
-		if( NeuzinTheme::neuzin_options('time_format') == 'none' ){
+		if( Theme::neuzin_options('time_format') == 'none' ){
 			return false;
 		}
 		# Human Readable Post Dates ----------
-		elseif(  NeuzinTheme::neuzin_options('time_format') == 'modern' ){
+		elseif(  Theme::neuzin_options('time_format') == 'modern' ){
 
 			$time_now  = current_time( 'timestamp' );
 			$post_time = get_the_time( 'U' ) ;
@@ -835,13 +836,13 @@ add_filter( 'get_the_archive_title', 'neuzin_archive_title' );
 add_filter('loop_shop_columns', 'neuzin_loop_columns', 999);
 
 function neuzin_loop_columns() {
-	$shop_product_column = NeuzinTheme::neuzin_options('wc_num_product_shop_page');
+	$shop_product_column = Theme::neuzin_options('wc_num_product_shop_page');
 	return $shop_product_column;
 }
 // Update Breadcrumb Separator
 add_action('bcn_after_fill', 'rt_hseparator_breadcrumb_trail', 1);
 	function rt_hseparator_breadcrumb_trail($object){
-		$delimiter  = NeuzinTheme::neuzin_options('breadcrumbs_delimiter') ? wp_kses_post( NeuzinTheme::neuzin_options('breadcrumbs_delimiter') ) : '&#47;';
+		$delimiter  = Theme::neuzin_options('breadcrumbs_delimiter') ? wp_kses_post( Theme::neuzin_options('breadcrumbs_delimiter') ) : '&#47;';
 		$object->opt['hseparator'] = '<em class="delimiter">'. $delimiter .'</em>';
 	return $object;
 }

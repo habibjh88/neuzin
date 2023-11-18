@@ -4,10 +4,11 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 $thumb_size = 'neuzin-size1';
 
-$neuzin_has_entry_meta  = ( NeuzinTheme::neuzin_options('port_info_title') || NeuzinTheme::neuzin_options('port_info_des') || NeuzinTheme::neuzin_options('port_start_date') || NeuzinTheme::neuzin_options('port_finish_date') || NeuzinTheme::neuzin_options('port_client') || NeuzinTheme::neuzin_options('port_cats') || NeuzinTheme::neuzin_options('port_tags') || NeuzinTheme::neuzin_options('port_website') || NeuzinTheme::neuzin_options('port_share') || NeuzinTheme::neuzin_options('port_rating') ) ? true : false;
+$neuzin_has_entry_meta  = ( Theme::neuzin_options('port_info_title') || Theme::neuzin_options('port_info_des') || Theme::neuzin_options('port_start_date') || Theme::neuzin_options('port_finish_date') || Theme::neuzin_options('port_client') || Theme::neuzin_options('port_cats') || Theme::neuzin_options('port_tags') || Theme::neuzin_options('port_website') || Theme::neuzin_options('port_share') || Theme::neuzin_options('port_rating') ) ? true : false;
 
 global $post;
 $neuzin_port_info_title  		= get_post_meta( $post->ID, 'neuzin_port_info_title', true );
@@ -32,7 +33,7 @@ $tags   						= implode( ', ', $tags );
 
 $socials        				= get_post_meta( $post->ID, 'neuzin_portfolio_icons', true );
 $socials        				= array_filter( $socials );
-$socials_fields 				= NeuzinTheme_Helper::team_socials();
+$socials_fields 				= Helper::team_socials();
 
 $neuzin_port_meta = ( !empty($neuzin_port_info_title) ) || ( !empty( $neuzin_port_des ) ) || ( !empty($neuzin_client_name) ) || ( !empty($neuzin_start_date) ) || ( !empty($neuzin_finish_date) ) || ( !empty($neuzin_website) ) || ( !empty( $cats ) || ( !empty( $socials ) ) ) ? true : false;
 
@@ -47,7 +48,7 @@ if ( $neuzin_has_entry_meta ) {
 }
 
 /*the_carousel*/
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$responsive = array(
 		'0'    => array( 'items' => 1 ),
 		'480'  => array( 'items' => 1 ),
@@ -114,26 +115,26 @@ wp_enqueue_script( 'owl-carousel' );
 		<?php if ( $neuzin_port_meta ) { ?>
 		<div class="col-lg-4 col-12">
 			<div class="portfolio-details">				
-				<?php if ( ( NeuzinTheme::neuzin_options('port_info_title') )  && !empty( $neuzin_port_info_title ) ) { ?>	
+				<?php if ( ( Theme::neuzin_options('port_info_title') )  && !empty( $neuzin_port_info_title ) ) { ?>	
 					<h3><?php echo wp_kses( $neuzin_port_info_title , 'alltext_allow' );?></h3>
 				<?php } ?>
-				<?php if ( ( NeuzinTheme::neuzin_options('port_info_des') )  && !empty( $neuzin_port_des ) ) { ?>	
+				<?php if ( ( Theme::neuzin_options('port_info_des') )  && !empty( $neuzin_port_des ) ) { ?>	
 					<p><?php echo wp_kses( $neuzin_port_des , 'alltext_allow' );?></p>
 				<?php } ?>
 				<ul class="rtin-portfolio-info">
-					<?php if ( ( NeuzinTheme::neuzin_options('port_client') )  && !empty( $neuzin_client_name ) ) { ?>	
+					<?php if ( ( Theme::neuzin_options('port_client') )  && !empty( $neuzin_client_name ) ) { ?>	
 						<li><span class="rtin-label"><?php esc_html_e( 'Client', 'neuzin' );?></span><?php echo esc_html( $neuzin_client_name );?></li>
-					<?php } if ( ( NeuzinTheme::neuzin_options('port_cats') )  && !empty( $cats ) ) { ?>	
+					<?php } if ( ( Theme::neuzin_options('port_cats') )  && !empty( $cats ) ) { ?>	
 						<li><span class="rtin-label"><?php esc_html_e( 'Category', 'neuzin' );?></span><?php echo wp_kses( $cats , 'alltext_allow' );?></li>
-					<?php } if ( ( NeuzinTheme::neuzin_options('port_tags') ) && !empty ( $tags ) ) { ?>
+					<?php } if ( ( Theme::neuzin_options('port_tags') ) && !empty ( $tags ) ) { ?>
 						<li><span class="rtin-label"><?php esc_html_e( 'Tags', 'neuzin' );?></span><?php the_tags('',', ', '');?></li>
-					<?php } if ( ( NeuzinTheme::neuzin_options('port_start_date') ) && !empty( $neuzin_start_date ) ) { ?>	
+					<?php } if ( ( Theme::neuzin_options('port_start_date') ) && !empty( $neuzin_start_date ) ) { ?>	
 						<li><span class="rtin-label"><?php esc_html_e( 'Start Date', 'neuzin' );?></span><?php echo esc_html( $neuzin_start_date );?></li>
-					<?php } if ( ( NeuzinTheme::neuzin_options('port_finish_date') ) && !empty( $neuzin_finish_date ) ) { ?>	
+					<?php } if ( ( Theme::neuzin_options('port_finish_date') ) && !empty( $neuzin_finish_date ) ) { ?>	
 						<li><span class="rtin-label"><?php esc_html_e( 'End Date', 'neuzin' );?></span><?php echo esc_html( $neuzin_finish_date );?></li>
-					<?php } if ( ( NeuzinTheme::neuzin_options('port_website') ) && !empty ( $neuzin_website ) ) { ?>
+					<?php } if ( ( Theme::neuzin_options('port_website') ) && !empty ( $neuzin_website ) ) { ?>
 						<li><span class="rtin-label"><?php esc_html_e( 'Website', 'neuzin' );?></span><?php echo wp_kses( $neuzin_website , 'alltext_allow' );?></li>
-					<?php } if ( ( NeuzinTheme::neuzin_options('port_share') ) && !empty( $socials ) ) { ?>
+					<?php } if ( ( Theme::neuzin_options('port_share') ) && !empty( $socials ) ) { ?>
 						<li class="port-share"><span class="rtin-label"><?php esc_html_e( 'Share', 'neuzin' );?></span> 
 							<ul class="rtin-social">
 								<?php foreach ( $socials as $key => $value ): ?>
@@ -142,7 +143,7 @@ wp_enqueue_script( 'owl-carousel' );
 							</ul>
 						</li>
 					
-					<?php } if ( NeuzinTheme::neuzin_options('port_rating') ) { ?>	
+					<?php } if ( Theme::neuzin_options('port_rating') ) { ?>	
 						<li class="port-rating"><span class="rtin-label"><?php esc_html_e( 'Rating', 'neuzin' );?></span>
 							<ul class="rating">
 								<?php for ($i=0; $i < $ratting; $i++) { ?>
@@ -159,7 +160,7 @@ wp_enqueue_script( 'owl-carousel' );
 		<?php } ?>
 		<?php } ?>
 	</div>
-	<?php if( NeuzinTheme::neuzin_options('show_related_port') == '1' && is_single() && !empty ( neuzin_related_port() ) ) { ?>
+	<?php if( Theme::neuzin_options('show_related_port') == '1' && is_single() && !empty ( neuzin_related_port() ) ) { ?>
 	<div class="related-post">
 		<?php neuzin_related_port(); ?>
 	</div>

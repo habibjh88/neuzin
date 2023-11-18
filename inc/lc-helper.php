@@ -5,16 +5,16 @@
  * @since 1.0.0
  */
 
-namespace RTLC;
+namespace devofwp\Neuzin;
 
-if ( defined( 'RT_DEBUG' ) && RT_DEBUG ) {
+if ( defined( 'RT_DEBUG' ) && DEVOFWP_DEBUG ) {
 	return;
 }
 
 /**
  * Radius Theme License
  */
-class Helper {
+class LC_Helper {
 	/**
 	 * Holds the values to be used in the fields callbacks
 	 *
@@ -290,5 +290,5 @@ class Helper {
 }
 
 if ( is_admin() ) {
-	new Helper();
+	new LC_Helper();
 }

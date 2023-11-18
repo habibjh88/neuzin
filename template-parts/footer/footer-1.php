@@ -1,5 +1,7 @@
 <?php
-$neuzin_footer_column = NeuzinTheme::neuzin_options('footer_column_1');
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$neuzin_footer_column = Theme::neuzin_options('footer_column_1');
 switch ( $neuzin_footer_column ) {
 	case '1':
 	$neuzin_footer_class = 'col-lg-12 col-sm-12 col-12';
@@ -15,20 +17,20 @@ switch ( $neuzin_footer_column ) {
 	break;
 }
 // Logo
-$neuzin_light_logo = empty( NeuzinTheme::neuzin_options('footer_logo_light')['url'] ) ? NEUZIN_IMG_URL . 'logo-light.png' : NeuzinTheme::neuzin_options('footer_logo_light')['url'];
-$neuzin_socials = NeuzinTheme_Helper::socials();
+$neuzin_light_logo = empty( Theme::neuzin_options('footer_logo_light')['url'] ) ? NEUZIN_IMG_URL . 'logo-light.png' : Theme::neuzin_options('footer_logo_light')['url'];
+$neuzin_socials = Helper::socials();
 
-$footer_bg_img = empty( NeuzinTheme::neuzin_options('fbgimg')['url'] ) ? NEUZIN_IMG_URL . 'footer1_bg.png' : NeuzinTheme::neuzin_options('fbgimg')['url'];
+$footer_bg_img = empty( Theme::neuzin_options('fbgimg')['url'] ) ? NEUZIN_IMG_URL . 'footer1_bg.png' : Theme::neuzin_options('fbgimg')['url'];
 
-if ( NeuzinTheme::neuzin_options('footer_bgtype') == 'fbgcolor' ) {
-	$neuzin_bg = NeuzinTheme::neuzin_options('fbgcolor');
+if ( Theme::neuzin_options('footer_bgtype') == 'fbgcolor' ) {
+	$neuzin_bg = Theme::neuzin_options('fbgcolor');
 } else {
 	$neuzin_bg = 'url(' . $footer_bg_img . ') no-repeat scroll center center / cover';
 }
 
 ?>
 <?php if ( is_active_sidebar( 'footer-style-1-1' ) ) { ?>
-<?php if ( NeuzinTheme::$footer_area == 1 || NeuzinTheme::$footer_area == 'on' ) { ?>
+<?php if ( Theme::$footer_area == 1 || Theme::$footer_area == 'on' ) { ?>
 	<div class="footer-top-area" style="background:<?php echo esc_html( $neuzin_bg ); ?>">
 		<div class="container">
 			<div class="row">
@@ -44,11 +46,11 @@ if ( NeuzinTheme::neuzin_options('footer_bgtype') == 'fbgcolor' ) {
 	</div>
 <?php } ?>
 <?php } ?>
-<?php if ( NeuzinTheme::$copyright_area == 1 || NeuzinTheme::$copyright_area == 'on' ) { ?>
+<?php if ( Theme::$copyright_area == 1 || Theme::$copyright_area == 'on' ) { ?>
 	<div class="footer-bottom-area">
 		<div class="container">
 			<div class="copyright_wrap">
-				 <div class="copyright"><?php echo wp_kses( NeuzinTheme::neuzin_options('copyright_text') , 'alltext_allow' );?></div>
+				 <div class="copyright"><?php echo wp_kses( Theme::neuzin_options('copyright_text') , 'alltext_allow' );?></div>
 			</div>
 		</div>
 	</div>

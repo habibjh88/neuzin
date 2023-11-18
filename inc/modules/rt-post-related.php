@@ -4,7 +4,8 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 if( ! function_exists( 'neuzin_related_post' )){
 	
 	function neuzin_related_post(){
@@ -12,11 +13,11 @@ if( ! function_exists( 'neuzin_related_post' )){
 		$post_id = get_the_id();	
 		$number_of_avail_post = '';
 		$current_post = array( $post_id );	
-		$title_length = NeuzinTheme::neuzin_options('show_related_post_title_limit') ? NeuzinTheme::neuzin_options('show_related_post_title_limit') : '';
-		$related_post_number = NeuzinTheme::neuzin_options('show_related_post_number');
+		$title_length = Theme::neuzin_options('show_related_post_title_limit') ? Theme::neuzin_options('show_related_post_title_limit') : '';
+		$related_post_number = Theme::neuzin_options('show_related_post_number');
 
 		# Making ready to the Query ...
-		$query_type = NeuzinTheme::neuzin_options('related_post_query');
+		$query_type = Theme::neuzin_options('related_post_query');
 
 		$args = array(
 			'post__not_in'           => $current_post,
@@ -28,9 +29,9 @@ if( ! function_exists( 'neuzin_related_post' )){
 		);
 
 		# Checking Related Posts Order ----------
-		if( NeuzinTheme::neuzin_options('related_post_sort') ){
+		if( Theme::neuzin_options('related_post_sort') ){
 
-			$post_order = NeuzinTheme::neuzin_options('related_post_sort');
+			$post_order = Theme::neuzin_options('related_post_sort');
 
 			if( $post_order == 'rand' ){
 
@@ -92,7 +93,7 @@ if( ! function_exists( 'neuzin_related_post' )){
 		# Get the posts ----------
 		$related_query = new wp_query( $args );
 		/*the_carousel*/
-		if ( NeuzinTheme::$layout == 'full-width' ) {
+		if ( Theme::$layout == 'full-width' ) {
 			$responsive = array(
 				'0'    => array( 'items' => 1 ),
 				'480'  => array( 'items' => 2 ),
@@ -158,7 +159,7 @@ if( ! function_exists( 'neuzin_related_post' )){
 					$trimmed_title = wp_trim_words( get_the_title(), $title_length, '' );
 				?>
 					<div class="position-relative">
-						<?php if ( has_post_thumbnail() || NeuzinTheme::neuzin_options('display_no_prev_img_related_post') == '1'  ) { ?>
+						<?php if ( has_post_thumbnail() || Theme::neuzin_options('display_no_prev_img_related_post') == '1'  ) { ?>
 						<a href="<?php the_permalink(); ?>">
 							<div class="img-scale-animate">
 							<?php
@@ -171,7 +172,7 @@ if( ! function_exists( 'neuzin_related_post' )){
 										<img src="<?php echo esc_attr( $image_attributes[0] ); ?>" width="<?php echo esc_attr( $image_attributes[1] ); ?>" height="<?php echo esc_attr( $image_attributes[2] ); ?>" />
 									<?php endif; 
 								} else {
-									if ( NeuzinTheme::neuzin_options('display_no_prev_img_related_post') == '1' ) {
+									if ( Theme::neuzin_options('display_no_prev_img_related_post') == '1' ) {
 									$thumbnail = '<img class="" src="'.NEUZIN_IMG_URL.'noimage_450X330.jpg" alt="'. the_title_attribute(array('echo'=> false)) .'">';
 									}
 								}
@@ -183,9 +184,9 @@ if( ! function_exists( 'neuzin_related_post' )){
 						<div class="rt-related-post-info">
 							<div class="post-date">
 								<ul>
-									<?php if ( NeuzinTheme::neuzin_options('show_related_post_date') ) { ?>
+									<?php if ( Theme::neuzin_options('show_related_post_date') ) { ?>
 									<li><?php echo get_the_date(); ?></li>
-									<?php } if ( NeuzinTheme::neuzin_options('show_related_post_cat') ) { ?>
+									<?php } if ( Theme::neuzin_options('show_related_post_cat') ) { ?>
 									<li><?php echo esc_html( neuzin_get_primary_category()[0]->name ); ?></li>
 									<?php } ?>
 								</ul>

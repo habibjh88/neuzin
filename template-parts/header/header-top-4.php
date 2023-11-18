@@ -4,28 +4,29 @@
  * @since   1.0
  * @version 1.0
  */
-
-$neuzin_socials = NeuzinTheme_Helper::socials();
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$neuzin_socials = Helper::socials();
 ?>
 <div id="tophead" class="header-top-bar align-items-center">
 	<div class="container">
 		<div class="top-bar-wrap">
 			<div class="tophead-left">
-				<?php if ( NeuzinTheme::neuzin_options('address') ) { ?>
+				<?php if ( Theme::neuzin_options('address') ) { ?>
 				<div class="address">
-					<?php echo wp_kses( NeuzinTheme::neuzin_options('address') , 'alltext_allow' );?>
+					<?php echo wp_kses( Theme::neuzin_options('address') , 'alltext_allow' );?>
 				</div>
 				<?php } ?>
-				<?php if ( NeuzinTheme::neuzin_options('email') ): ?>
+				<?php if ( Theme::neuzin_options('email') ): ?>
 					<div class="email-address">
-						<span><i class="far fa-envelope"></i></span><a href="mailto:<?php echo esc_attr( NeuzinTheme::neuzin_options('email') );?>"><?php echo wp_kses( NeuzinTheme::neuzin_options('email') , 'alltext_allow' );?></a>
+						<span><i class="far fa-envelope"></i></span><a href="mailto:<?php echo esc_attr( Theme::neuzin_options('email') );?>"><?php echo wp_kses( Theme::neuzin_options('email') , 'alltext_allow' );?></a>
 					</div>
 				<?php endif; ?>
 			</div>
 			<div class="tophead-right">
-				<?php if ( NeuzinTheme::neuzin_options('phone') ): ?>
+				<?php if ( Theme::neuzin_options('phone') ): ?>
 				<div class="phone">
-					<span><i class="fas fa-phone-alt"></i></span><a href="tel:<?php echo esc_attr( NeuzinTheme::neuzin_options('phone') );?>"><?php echo wp_kses( NeuzinTheme::neuzin_options('phone') , 'alltext_allow' );?></a>
+					<span><i class="fas fa-phone-alt"></i></span><a href="tel:<?php echo esc_attr( Theme::neuzin_options('phone') );?>"><?php echo wp_kses( Theme::neuzin_options('phone') , 'alltext_allow' );?></a>
 				</div>
 				<?php endif; ?>
 				<?php if ( $neuzin_socials ) { ?>

@@ -1,5 +1,7 @@
 <?php
-$neuzin_footer_column = NeuzinTheme::neuzin_options('footer_column_5');
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$neuzin_footer_column = Theme::neuzin_options('footer_column_5');
 switch ( $neuzin_footer_column ) {
 	case '1':
 	$neuzin_footer_class = 'col-lg-12 col-sm-12 col-12';
@@ -14,12 +16,12 @@ switch ( $neuzin_footer_column ) {
 	$neuzin_footer_class = 'col-lg-3 col-sm-6 col-12';
 	break;
 }
-$neuzin_footer5_topshap = empty( NeuzinTheme::neuzin_options('footer5_top_shape')['url'] ) ? NEUZIN_IMG_URL . 'element57.png' : NeuzinTheme::neuzin_options('footer5_top_shape')['url'];
+$neuzin_footer5_topshap = empty( Theme::neuzin_options('footer5_top_shape')['url'] ) ? NEUZIN_IMG_URL . 'element57.png' : Theme::neuzin_options('footer5_top_shape')['url'];
 // Logo
-$neuzin_light_logo = empty( NeuzinTheme::neuzin_options('footer_logo_light')['url'] ) ? NEUZIN_IMG_URL . 'logo-light.png' : NeuzinTheme::neuzin_options('footer_logo_light')['url'];
-$neuzin_socials = NeuzinTheme_Helper::socials();
+$neuzin_light_logo = empty( Theme::neuzin_options('footer_logo_light')['url'] ) ? NEUZIN_IMG_URL . 'logo-light.png' : Theme::neuzin_options('footer_logo_light')['url'];
+$neuzin_socials = Helper::socials();
 ?>
-<?php if ( NeuzinTheme::$footer_area == 1 || NeuzinTheme::$footer_area == 'on' ) { ?>
+<?php if ( Theme::$footer_area == 1 || Theme::$footer_area == 'on' ) { ?>
 	<img src="<?php echo esc_url($neuzin_footer5_topshap); ?>" alt="footershape">
 	<div class="footer-top-area">
 		<div class="container">
@@ -35,11 +37,11 @@ $neuzin_socials = NeuzinTheme_Helper::socials();
 		</div>
 	</div>
 <?php } ?>
-<?php if ( NeuzinTheme::$copyright_area == 1 || NeuzinTheme::$copyright_area == 'on' ) { ?>
+<?php if ( Theme::$copyright_area == 1 || Theme::$copyright_area == 'on' ) { ?>
 	<div class="footer-bottom-area">
 		<div class="container">
 			<div class="copyright_wrap">
-				<div class="copyright"><?php echo wp_kses( NeuzinTheme::neuzin_options('copyright_text') , 'alltext_allow' );?></div>
+				<div class="copyright"><?php echo wp_kses( Theme::neuzin_options('copyright_text') , 'alltext_allow' );?></div>
 			</div>
 		</div>
 	</div>

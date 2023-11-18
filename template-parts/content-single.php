@@ -4,8 +4,9 @@
  * @since   1.0
  * @version 1.0
  */
-
-$neuzin_has_entry_meta  = ( NeuzinTheme::neuzin_options('post_author_name') || NeuzinTheme::neuzin_options('post_date') || NeuzinTheme::neuzin_options('post_comment_num') || NeuzinTheme::neuzin_options('post_cats') || ( NeuzinTheme::neuzin_options('post_length') && function_exists( 'neuzin_reading_time' ) ) ) ? true : false;
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$neuzin_has_entry_meta  = ( Theme::neuzin_options('post_author_name') || Theme::neuzin_options('post_date') || Theme::neuzin_options('post_comment_num') || Theme::neuzin_options('post_cats') || ( Theme::neuzin_options('post_length') && function_exists( 'neuzin_reading_time' ) ) ) ? true : false;
 
 $neuzin_comments_number = number_format_i18n( get_comments_number() );
 $neuzin_comments_html = $neuzin_comments_number == 1 ? esc_html__( 'Comment' , 'neuzin' ) : esc_html__( 'Comments' , 'neuzin' );
@@ -24,7 +25,7 @@ $neuzin_author_designation = get_user_meta( $author, 'neuzin_author_designation'
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-header">
-		<?php if ( NeuzinTheme::neuzin_options('post_featured_image') == true ) { ?>
+		<?php if ( Theme::neuzin_options('post_featured_image') == true ) { ?>
 			<?php if ( has_post_thumbnail() ) { ?>
 				<div class="entry-thumbnail-area"><?php the_post_thumbnail( 'neuzin-size1' , ['class' => 'img-responsive'] ); ?></div>
 			<?php } ?>
@@ -33,15 +34,15 @@ $neuzin_author_designation = get_user_meta( $author, 'neuzin_author_designation'
 		<div class="entry-meta">
 			<?php if ( $neuzin_has_entry_meta ) { ?>
 			<ul class="post-light">
-				<?php if ( NeuzinTheme::neuzin_options('post_date') ) { ?>			
+				<?php if ( Theme::neuzin_options('post_date') ) { ?>			
 				<li><i class="far fa-calendar-alt" aria-hidden="true"></i><?php echo get_the_date(); ?></li>	
-				<?php } if ( NeuzinTheme::neuzin_options('post_author_name') ) { ?>
+				<?php } if ( Theme::neuzin_options('post_author_name') ) { ?>
 				<li class="item-author"><i class="far fa-user" aria-hidden="true"></i><?php esc_html_e( 'by ', 'neuzin' );?><?php the_author_posts_link(); ?></li>
-				<?php } if ( NeuzinTheme::neuzin_options('post_cats') ) { ?>			
+				<?php } if ( Theme::neuzin_options('post_cats') ) { ?>			
 				<li class="blog-cat"><i class="fas fa-tags" aria-hidden="true"></i><?php echo the_category( ', ' );?></li>
-				<?php } if ( NeuzinTheme::neuzin_options('post_length') && function_exists( 'neuzin_reading_time' ) ) { ?>
+				<?php } if ( Theme::neuzin_options('post_length') && function_exists( 'neuzin_reading_time' ) ) { ?>
 				<li class="meta-reading-time meta-item"><i class="far fa-clock" aria-hidden="true"></i><?php echo neuzin_reading_time(); ?></li>				
-				<?php } if ( NeuzinTheme::neuzin_options('post_comment_num') ) { ?>
+				<?php } if ( Theme::neuzin_options('post_comment_num') ) { ?>
 				<li><i class="far fa-comments" aria-hidden="true"></i><?php echo wp_kses( $neuzin_comments_html , 'alltext_allow' ); ?></li>
 				<?php } ?>
 			</ul>
@@ -59,14 +60,14 @@ $neuzin_author_designation = get_user_meta( $author, 'neuzin_author_designation'
 			'link_after'  => '</span>',
 		) ); ?>
 	</div>
-	<?php if ( ( NeuzinTheme::neuzin_options('post_view') && function_exists( 'neuzin_views' ) ) || ( NeuzinTheme::neuzin_options('post_tags') && has_tag() ) || NeuzinTheme::neuzin_options('post_share') ) { ?>
+	<?php if ( ( Theme::neuzin_options('post_view') && function_exists( 'neuzin_views' ) ) || ( Theme::neuzin_options('post_tags') && has_tag() ) || Theme::neuzin_options('post_share') ) { ?>
 	<div class="entry-footer">
 		<div class="entry-footer-meta">
-			<?php if ( NeuzinTheme::neuzin_options('post_view') && function_exists( 'neuzin_views' ) ) { ?>
+			<?php if ( Theme::neuzin_options('post_view') && function_exists( 'neuzin_views' ) ) { ?>
 			<div class="item-view"><i class="fas fa-chart-line" aria-hidden="true"></i><?php echo neuzin_views(); ?></div>
-			<?php } if ( ( NeuzinTheme::neuzin_options('post_share') ) && ( function_exists( 'neuzin_post_share' ) ) ) { ?>
+			<?php } if ( ( Theme::neuzin_options('post_share') ) && ( function_exists( 'neuzin_post_share' ) ) ) { ?>
 			<div class="post-share"><span><?php esc_html_e( 'Share :', 'neuzin' );?></span><?php neuzin_post_share(); ?></div>
-			<?php } if ( NeuzinTheme::neuzin_options('post_tags') && has_tag() ) { ?>
+			<?php } if ( Theme::neuzin_options('post_tags') && has_tag() ) { ?>
 			<div class="item-tags">
 				<span><?php esc_html_e( 'Tags :', 'neuzin' );?></span><?php echo get_the_term_list( $post->ID, 'post_tag', '' ,',&nbsp; &nbsp;' ,'' ); ?>
 			</div>
@@ -75,7 +76,7 @@ $neuzin_author_designation = get_user_meta( $author, 'neuzin_author_designation'
 	</div>
 	<?php } ?>
 	<!-- author bio -->
-	<?php if ( NeuzinTheme::neuzin_options('post_author_bio') == '1' ) { ?>
+	<?php if ( Theme::neuzin_options('post_author_bio') == '1' ) { ?>
 		<?php if ( !empty ( $neuzin_author_bio ) ) { ?>
 		<div class="media about-author">
 			<div class="<?php if ( is_rtl() ) { ?>pull-right<?php } else { ?>pull-left<?php } ?>">
@@ -101,7 +102,7 @@ $neuzin_author_designation = get_user_meta( $author, 'neuzin_author_designation'
 		<?php } ?>
 	<?php } ?>
 	
-	<?php if( NeuzinTheme::neuzin_options('show_related_post') == '1' && is_single() && !empty ( neuzin_related_post() ) ) { ?>
+	<?php if( Theme::neuzin_options('show_related_post') == '1' && is_single() && !empty ( neuzin_related_post() ) ) { ?>
 		<div class="related-post">
 			<?php neuzin_related_post(); ?>
 		</div>

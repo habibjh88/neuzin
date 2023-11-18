@@ -4,10 +4,10 @@
  * @since   1.0
  * @version 1.0
  */
+namespace devofwp\Neuzin;
+if ( ! class_exists( 'Theme' ) ) {
 
-if ( ! class_exists( 'NeuzinTheme' ) ) {
-
-	class NeuzinTheme {
+	class Theme {
 
 		protected static $instance = null;
 
@@ -56,10 +56,7 @@ if ( ! class_exists( 'NeuzinTheme' ) ) {
 			add_action( 'admin_menu', array( $this, 'remove_redux_menu' ), 12 ); // Remove Redux Menu
 			add_filter( 'redux/neuzin/aURL_filter', '__return_empty_string' ); // Remove Redux Ads
 			add_action( 'redux/page/neuzin/enqueue', array( $this, 'redux_admin_style' ) );
-			add_action( 'redux/loaded', array(
-				$this,
-				'remove_redux_demo'
-			) ); // If Redux is running as a plugin, this will remove the demo notice and links
+			add_action( 'redux/loaded', array( $this, 'remove_redux_demo' ) ); // If Redux is running as a plugin, this will remove the demo notice and links
 
 			// Flash permalink after options changed
 			add_action( 'redux/options/neuzin/saved', array( $this, 'flush_redux_saved' ), 10, 2 );
@@ -70,7 +67,7 @@ if ( ! class_exists( 'NeuzinTheme' ) ) {
 		public function remove_redux_demo() {
 			if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
 				add_filter( 'plugin_row_meta', array( $this, 'redux_remove_extra_meta' ), 12, 2 );
-				remove_action( 'admin_notices', array( ReduxFrameworkPlugin::instance(), 'admin_notices' ) );
+				remove_action( 'admin_notices', array( \ReduxFrameworkPlugin::instance(), 'admin_notices' ) );
 			}
 		}
 
@@ -90,7 +87,7 @@ if ( ! class_exists( 'NeuzinTheme' ) ) {
 				return;
 			}
 			global $neuzin;
-			self::$options = $neuzin ? $neuzin : array();
+			self::$options = $neuzin ?? [];
 
 			// Prevent Redux first activation error on admin
 			if ( is_admin() && count( self::$options ) < 3 ) {
@@ -142,7 +139,7 @@ if ( ! class_exists( 'NeuzinTheme' ) ) {
 	}
 }
 
-NeuzinTheme::instance();
+Theme::instance();
 
 // Remove Redux NewsFlash
 if ( ! class_exists( 'reduxNewsflash' ) ) {

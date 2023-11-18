@@ -9,7 +9,7 @@
 
 use devofwp\Neuzin\Helper;
 // Layout class
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
 }
 else{
@@ -40,7 +40,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<div class="container">
 		<div class="row">
-			<?php if ( NeuzinTheme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
+			<?php if ( Theme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
 			<div class="<?php echo esc_attr( $neuzin_layout_class );?>">
 				<main id="main" class="site-main">
 					<?php if ( have_posts() ) :?>
@@ -53,14 +53,14 @@ get_header(); ?>
 							endwhile;
 							echo '</div>';
 						?>
-						<div class="mt50"><?php NeuzinTheme_Helper::pagination();?></div>
+						<div class="mt50"><?php Helper::pagination();?></div>
 					<?php else:?>
 						<?php get_template_part( 'template-parts/content', 'none' );?>
 					<?php endif;?>
 					
 				</main>
 			</div>
-			<?php if ( NeuzinTheme::$layout == 'right-sidebar' ) { get_sidebar(); }	?>
+			<?php if ( Theme::$layout == 'right-sidebar' ) { get_sidebar(); }	?>
 		</div>
 	</div>
 </div>

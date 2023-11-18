@@ -4,7 +4,8 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 if( ! function_exists( 'neuzin_related_port' )){
 	
 	function neuzin_related_port(){
@@ -12,11 +13,11 @@ if( ! function_exists( 'neuzin_related_port' )){
 		$post_id = get_the_id();	
 		$number_of_avail_post = '';
 		$current_post = array( $post_id );	
-		$title_length = NeuzinTheme::neuzin_options('show_related_port_title_limit') ? NeuzinTheme::neuzin_options('show_related_port_title_limit') : '';
-		$related_post_number = NeuzinTheme::neuzin_options('show_related_port_number');
+		$title_length = Theme::neuzin_options('show_related_port_title_limit') ? Theme::neuzin_options('show_related_port_title_limit') : '';
+		$related_post_number = Theme::neuzin_options('show_related_port_number');
 
 		# Making ready to the Query ...
-		$query_type = NeuzinTheme::neuzin_options('related_post_query');
+		$query_type = Theme::neuzin_options('related_post_query');
 
 		$args = array(
 			'post_type'				 => 'neuzin_portfolio',
@@ -29,9 +30,9 @@ if( ! function_exists( 'neuzin_related_port' )){
 		);
 
 		# Checking Related Posts Order ----------
-		if( NeuzinTheme::neuzin_options('related_post_sort') ){
+		if( Theme::neuzin_options('related_post_sort') ){
 
-			$post_order = NeuzinTheme::neuzin_options('related_post_sort');
+			$post_order = Theme::neuzin_options('related_post_sort');
 
 			if( $post_order == 'rand' ){
 
@@ -104,7 +105,7 @@ if( ! function_exists( 'neuzin_related_port' )){
 		# Get the posts ----------
 		$related_query = new wp_query( $args );
 		/*the_carousel*/
-		if ( NeuzinTheme::$layout == 'full-width' ) {
+		if ( Theme::$layout == 'full-width' ) {
 			$responsive = array(
 				'0'    => array( 'items' => 1 ),
 				'480'  => array( 'items' => 2 ),
@@ -193,7 +194,7 @@ if( ! function_exists( 'neuzin_related_port' )){
 						<div class="rtin-content">
 							<div class="rtin-icon"><a href="<?php the_permalink(); ?>"><i class="fas fa-plus" aria-hidden="true"></i></a></div>
 							<h3 class="rtin-title"><a href="<?php the_permalink(); ?>"><?php echo esc_html ( $trimmed_title ); ?></a></h3>
-							<?php if ( NeuzinTheme::neuzin_options('show_related_port_cat') ) { ?>
+							<?php if ( Theme::neuzin_options('show_related_port_cat') ) { ?>
 							<div class="rtin-cat"><?php
 								$i = 1;
 								$term_lists = get_the_terms( get_the_ID(), 'neuzin_portfolio_category' );

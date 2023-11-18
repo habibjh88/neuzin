@@ -28,44 +28,47 @@ INDEX
 #. Miscellaneous
 -------------------------------------*/
 
-$primary_color         = NeuzinTheme::neuzin_options('primary_color'); // #5a49f8
-$primary_rgb           = NeuzinTheme_Helper::hex2rgb( $primary_color ); // 90, 73, 248
-$secondary_color       = NeuzinTheme::neuzin_options('secondary_color'); // #7a64f2
-$secondary_rgb         = NeuzinTheme_Helper::hex2rgb( $secondary_color ); // 122, 100, 242
-$dark_color       	   = NeuzinTheme::neuzin_options('dark_color'); // #750ed5
-$dark_rgb              = NeuzinTheme_Helper::hex2rgb( $dark_color ); // 117, 14, 213
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 
-$container_width	   = NeuzinTheme::neuzin_options('container_width'); // Grid Container width
+$primary_color         = Theme::neuzin_options('primary_color'); // #5a49f8
+$primary_rgb           = Helper::hex2rgb( $primary_color ); // 90, 73, 248
+$secondary_color       = Theme::neuzin_options('secondary_color'); // #7a64f2
+$secondary_rgb         = Helper::hex2rgb( $secondary_color ); // 122, 100, 242
+$dark_color       	   = Theme::neuzin_options('dark_color'); // #750ed5
+$dark_rgb              = Helper::hex2rgb( $dark_color ); // 117, 14, 213
 
-$menu_typo             = NeuzinTheme::neuzin_options('menu_typo');
-$menu_color            = NeuzinTheme::neuzin_options('menu_color');
-$menu_color_tr         = NeuzinTheme::neuzin_options('menu_color_tr');
-$menu_hover_color      = NeuzinTheme::neuzin_options('menu_hover_color');
-$menu_hover_color_tr   = NeuzinTheme::neuzin_options('menu_hover_color_tr');
-$submenu_typo          = NeuzinTheme::neuzin_options('submenu_typo');
-$submenu_color         = NeuzinTheme::neuzin_options('submenu_color');
-$submenu_bgcolor       = NeuzinTheme::neuzin_options('submenu_bgcolor');
-$submenu_hover_color   = NeuzinTheme::neuzin_options('submenu_hover_color');
-$resmenu_typo          = NeuzinTheme::neuzin_options('resmenu_typo');
-$footer4_bgcolor_dark  = NeuzinTheme::neuzin_options('footer4_bgcolor_dark');
-$footer4_bgcolor_light = NeuzinTheme::neuzin_options('footer4_bgcolor_light');
+$container_width	   = Theme::neuzin_options('container_width'); // Grid Container width
 
-$footer8_gradient_dark  = NeuzinTheme::neuzin_options('footer8_gradient_dark');
-$footer8_gradient_light = NeuzinTheme::neuzin_options('footer8_gradient_light');
-$footer8_copy_gradient_dark = NeuzinTheme::neuzin_options('footer8_copy_gradient_dark');
-$footer8_copy_gradient_light = NeuzinTheme::neuzin_options('footer8_copy_gradient_light');
+$menu_typo             = Theme::neuzin_options('menu_typo');
+$menu_color            = Theme::neuzin_options('menu_color');
+$menu_color_tr         = Theme::neuzin_options('menu_color_tr');
+$menu_hover_color      = Theme::neuzin_options('menu_hover_color');
+$menu_hover_color_tr   = Theme::neuzin_options('menu_hover_color_tr');
+$submenu_typo          = Theme::neuzin_options('submenu_typo');
+$submenu_color         = Theme::neuzin_options('submenu_color');
+$submenu_bgcolor       = Theme::neuzin_options('submenu_bgcolor');
+$submenu_hover_color   = Theme::neuzin_options('submenu_hover_color');
+$resmenu_typo          = Theme::neuzin_options('resmenu_typo');
+$footer4_bgcolor_dark  = Theme::neuzin_options('footer4_bgcolor_dark');
+$footer4_bgcolor_light = Theme::neuzin_options('footer4_bgcolor_light');
+
+$footer8_gradient_dark  = Theme::neuzin_options('footer8_gradient_dark');
+$footer8_gradient_light = Theme::neuzin_options('footer8_gradient_light');
+$footer8_copy_gradient_dark = Theme::neuzin_options('footer8_copy_gradient_dark');
+$footer8_copy_gradient_light = Theme::neuzin_options('footer8_copy_gradient_light');
 
 
-$neuzin_typo_body     = NeuzinTheme::neuzin_options('typo_body');
-$neuzin_typo_h1       = NeuzinTheme::neuzin_options('typo_h1');
-$neuzin_typo_h2       = NeuzinTheme::neuzin_options('typo_h2');
-$neuzin_typo_h3       = NeuzinTheme::neuzin_options('typo_h3');
-$neuzin_typo_h4       = NeuzinTheme::neuzin_options('typo_h4');
-$neuzin_typo_h5       = NeuzinTheme::neuzin_options('typo_h5');
-$neuzin_typo_h6       = NeuzinTheme::neuzin_options('typo_h6');
+$neuzin_typo_body     = Theme::neuzin_options('typo_body');
+$neuzin_typo_h1       = Theme::neuzin_options('typo_h1');
+$neuzin_typo_h2       = Theme::neuzin_options('typo_h2');
+$neuzin_typo_h3       = Theme::neuzin_options('typo_h3');
+$neuzin_typo_h4       = Theme::neuzin_options('typo_h4');
+$neuzin_typo_h5       = Theme::neuzin_options('typo_h5');
+$neuzin_typo_h6       = Theme::neuzin_options('typo_h6');
 
-$desktop_logo_width       = NeuzinTheme::neuzin_options('desktop_logo_width');
-$mobile_logo_width       = NeuzinTheme::neuzin_options('mobile_logo_width');
+$desktop_logo_width       = Theme::neuzin_options('desktop_logo_width');
+$mobile_logo_width       = Theme::neuzin_options('mobile_logo_width');
 
 ?>
 <?php
@@ -88,7 +91,7 @@ $mobile_logo_width       = NeuzinTheme::neuzin_options('mobile_logo_width');
 	color: <?php echo esc_html( $dark_color ); ?>;
 }
 body {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('body_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('body_color') ); ?>;
 }
 a {
 	color: <?php echo esc_html( $primary_color ); ?>;
@@ -113,38 +116,38 @@ a:hover {
 ---------------------------------------*/
 ?>
 .topbar-style-1 .header-top-bar {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_bgcolor') ); ?>;
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_color') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('top_bar_bgcolor') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_bar_color') ); ?>;
 }
 .topbar-style-1 .header-top-bar a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_bar_color') ); ?>;
 }
 .topbar-style-1 .header-top-bar .tophead-right i,
 .topbar-style-1 .header-top-bar .tophead-left i:before {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_baricon_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_baricon_color') ); ?>;
 }
 
 .topbar-style-1.trheader .header-top-bar {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_color_tr') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_bar_color_tr') ); ?>;
 }
 .topbar-style-1.trheader .header-top-bar a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_color_tr') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_bar_color_tr') ); ?>;
 }
 .topbar-style-1.trheader .header-top-bar .tophead-right i,
 .topbar-style-1.trheader .header-top-bar .tophead-left i:before {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_baricon_color_tr') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_baricon_color_tr') ); ?>;
 }
 
 .topbar-style-2 .header-top-bar {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_bgcolor_2') ); ?>;
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_color_2') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('top_bar_bgcolor_2') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_bar_color_2') ); ?>;
 }
 .topbar-style-2 .header-top-bar a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_bar_color_2') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_bar_color_2') ); ?>;
 }
 .topbar-style-2 .header-top-bar .tophead-right i, 
 .topbar-style-2 .header-top-bar .tophead-left i:before {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('top_baricon_color_2') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('top_baricon_color_2') ); ?>;
 }
 .topbar-style-2 .header-top-bar .tophead-right a:hover i, 
 .topbar-style-2 .header-top-bar .tophead-left a:hover i:before {
@@ -449,31 +452,31 @@ h6 {
 ---------------------------------------*/
 ?>
 .entry-banner .entry-banner-content h1 {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('banner_heading_color') );?>;
+	color: <?php echo esc_html( Theme::neuzin_options('banner_heading_color') );?>;
 }
 .breadcrumb-area .entry-breadcrumb span a,
 .breadcrumb-trail ul.trail-items li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('breadcrumb_link_color') );?>;
+	color: <?php echo esc_html( Theme::neuzin_options('breadcrumb_link_color') );?>;
 }
 .breadcrumb-area .entry-breadcrumb span a:hover,
 .breadcrumb-trail ul.trail-items li a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('breadcrumb_link_hover_color') );?>;
+	color: <?php echo esc_html( Theme::neuzin_options('breadcrumb_link_hover_color') );?>;
 }
 .breadcrumb-trail ul.trail-items li,
 .entry-banner .entry-breadcrumb .delimiter {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('breadcrumb_seperator_color') );?>;
+	color: <?php echo esc_html( Theme::neuzin_options('breadcrumb_seperator_color') );?>;
 }
 .breadcrumb-area .entry-breadcrumb > span:last-child,
 .breadcrumb-trail ul.trail-items li > span {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('breadcrumb_active_color') );?>;
+	color: <?php echo esc_html( Theme::neuzin_options('breadcrumb_active_color') );?>;
 }
 .entry-banner .entry-banner-content {
-	padding-top: <?php  echo esc_html( NeuzinTheme::neuzin_options('banner_top_padding') ); ?>px;
-	padding-bottom: <?php  echo esc_html( NeuzinTheme::neuzin_options('banner_bottom_padding') ); ?>px;
+	padding-top: <?php  echo esc_html( Theme::neuzin_options('banner_top_padding') ); ?>px;
+	padding-bottom: <?php  echo esc_html( Theme::neuzin_options('banner_bottom_padding') ); ?>px;
 }
 
 .entry-banner:after {
-    opacity: <?php  echo esc_html( NeuzinTheme::neuzin_options('banner_bg_opacity') ); ?>;
+    opacity: <?php  echo esc_html( Theme::neuzin_options('banner_bg_opacity') ); ?>;
 	background-image: -o-linear-gradient(30deg, <?php echo esc_html( $primary_color ); ?> 0%, <?php echo esc_html( $dark_color ); ?> 93%);
 	background-image: linear-gradient(60deg, <?php echo esc_html( $primary_color ); ?>, <?php echo esc_html( $dark_color ); ?> 93%);
 }
@@ -481,16 +484,16 @@ h6 {
 .entry-banner .shape-holder li.shape1 svg stop:first-child,
 .entry-banner .shape-holder li.shape2 svg stop:first-child,
 .entry-banner .shape-holder li.shape3 svg stop:first-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('banner_shape1') );?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('banner_shape1') );?>;
 }
 .entry-banner .shape-holder li.shape1 svg stop:last-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('banner_shape2') );?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('banner_shape2') );?>;
 }
 .entry-banner .shape-holder li.shape2 svg stop:last-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('banner_shape3') );?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('banner_shape3') );?>;
 }
 .entry-banner .shape-holder li.shape3 svg stop:last-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('banner_shape4') );?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('banner_shape4') );?>;
 }
 
 
@@ -500,31 +503,31 @@ h6 {
 ---------------------------------------*/
 ?> 
 .footer-top-area {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer_color') ); ?>;
 }
 .footer-top-area .widget h3 {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer_title_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer_title_color') ); ?>;
 }
 .footer-top-area .widget ul li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer_link_color') ); ?>;
 }
 .footer-top-area .widget ul li a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer_link_hover_color') ); ?>;
 }
 .footer-top-area .corporate-address li i,
 .footer-top-area .widget_recent_entries ul li .post-date {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer_link_hover_color') ); ?>;
 }
 .footer-style-4 .footer-area:before {
 	background-image: -o-linear-gradient(30deg, <?php echo esc_html( $footer4_bgcolor_dark ); ?> 0%, <?php echo esc_html( $footer4_bgcolor_light ); ?> 100%);
 	background-image: linear-gradient(60deg, <?php echo esc_html( $footer4_bgcolor_dark ); ?> 0%, <?php echo esc_html( $footer4_bgcolor_light ); ?> 100%);
 }
 .footer-style-4 .footer-top-area .widget h3 {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_title_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer4_title_color') ); ?>;
 }
 .footer-style-4 .footer-area .footer-top-area,
 .footer-style-4 .footer-bottom-area {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer4_color') ); ?>;
 }
 .footer-style-4 .footer-top-area a, 
 .footer-style-4 .footer-top-area .widget ul li a,
@@ -534,7 +537,7 @@ h6 {
 .footer-style-4 .footer-top-area .corporate-address li i,
 .footer-style-4 .footer-top-area ul li a i,
 .footer-style-4 .footer-bottom-area .copyright a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer4_color') ); ?>;
 }
 .footer-style-4 .footer-top-area a:hover, 
 .footer-style-4 .footer-top-area .widget ul li a:hover,
@@ -542,112 +545,112 @@ h6 {
 .footer-style-4 .copyright_widget .widget ul li a:hover,
 .footer-style-4 .footer-top-area ul li a:hover i,
 .footer-style-4 .footer-bottom-area .copyright a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer4_link_hover_color') ); ?>;
 }
 <?php /*Footer 4 shape color*/ ?>
 .footer-style-4 .shape-holder .shape1 svg stop:first-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_shape1') ); ?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('footer4_shape1') ); ?>;
 }
 .footer-style-4 .shape-holder .shape1 svg stop:last-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_shape2') ); ?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('footer4_shape2') ); ?>;
 }
 .footer-style-4 .shape-holder .shape2 svg stop:first-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_shape3') ); ?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('footer4_shape3') ); ?>;
 }
 .footer-style-4 .shape-holder .shape2 svg stop:last-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_shape2') ); ?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('footer4_shape2') ); ?>;
 }
 .footer-style-4 .shape-holder .shape3 svg stop:first-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_shape4') ); ?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('footer4_shape4') ); ?>;
 }
 .footer-style-4 .shape-holder .shape3 svg stop:last-child {
-	stop-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer4_shape5') ); ?>;
+	stop-color: <?php echo esc_html( Theme::neuzin_options('footer4_shape5') ); ?>;
 }
 <?php /*Footer 5 color*/ ?>
 
 .footer-style-5 .footer-top-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer5_bgcolor') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer5_bgcolor') ); ?>;
 }
 .footer-style-5 .footer-bottom-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer5_copy_bgcolor') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer5_copy_bgcolor') ); ?>;
 }
 <?php /*Footer 6 color*/ ?>
 .footer-style-6 .footer-top-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_bgcolor') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer6_bgcolor') ); ?>;
 }
 .footer-style-6 .footer-top-area .widget h3 {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_title_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer6_title_color') ); ?>;
 }
 .footer-style-6 .footer-top-area .widget a,
 .footer-style-6 .footer-top-area .widget ul li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer6_link_color') ); ?>;
 }
 .footer-style-6 .footer-top-area .widget a:hover,
 .footer-style-6 .footer-top-area .widget ul li a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer6_link_hover_color') ); ?>;
 }
 .footer-style-6 .footer-top-area,
 .footer-style-6 .footer-top-area .corporate-address li i,
 .footer-style-6 .footer-top-area .widget_recent_entries ul li .post-date,
 .footer-style-6 .footer-top-area .rt-post-box .post-box-style ul li,
 .footer-style-6 .footer-top-area .rt-post-box .post-box-style ul li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer6_color') ); ?>;
 }
 .footer-style-6 .footer-bottom-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_copy_bgcolor') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer6_copy_bgcolor') ); ?>;
 }
 .footer-style-6 .footer-bottom-area,
 .footer-style-6 .footer-bottom-area a,
 .footer-style-6 .footer-bottom-area a:link,
 .footer-style-6 .footer-bottom-area .widget a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer6_link_color') ); ?>;
 }
 .footer-style-6 .footer-bottom-area a:hover,
 .footer-style-6 .footer-bottom-area a:link:hover,
 .footer-style-6 .footer-bottom-area .widget a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer6_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer6_link_hover_color') ); ?>;
 }
 .footer-style-6 .footer-top-area .rt_footer_social_widget ul.footer-social li a:hover {
 	color: <?php echo esc_html( $primary_color ); ?>;
 }
 <?php /*Footer 7 color*/ ?>
 .footer-style-7 .footer-top-area .widget h3 {
-    color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_title_color') ); ?>;
+    color: <?php echo esc_html( Theme::neuzin_options('footer7_title_color') ); ?>;
 }
 .footer-style-7 .footer-top-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_bgcolor') ); ?>;
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_color') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer7_bgcolor') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer7_color') ); ?>;
 }
 .footer-style-7 .footer-bottom-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_copy_bgcolor') ); ?>;
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_color') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer7_copy_bgcolor') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer7_color') ); ?>;
 }
 .footer-style-7 .footer-top-area .widget a, 
 .footer-style-7 .footer-top-area .widget ul li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer7_link_color') ); ?>;
 }
 .footer-style-7 .footer-top-area .widget a:hover, 
 .footer-style-7 .footer-top-area .widget ul li a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer7_link_hover_color') ); ?>;
 }
 .footer-style-7 .footer-bottom-area a, 
 .footer-style-7 .footer-bottom-area a:link, 
 .footer-style-7 .footer-bottom-area .widget a {
-    color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_link_color') ); ?>;
+    color: <?php echo esc_html( Theme::neuzin_options('footer7_link_color') ); ?>;
 }
 .footer-style-7 .footer-bottom-area a:hover, 
 .footer-style-7 .footer-bottom-area a:link:hover, 
 .footer-style-7 .footer-bottom-area .widget a:hover {
-    color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_link_hover_color') ); ?>;
+    color: <?php echo esc_html( Theme::neuzin_options('footer7_link_hover_color') ); ?>;
 }
 .footer-style-7 .footer-top-area .corporate-address li i,
 .footer-style-7 .footer-top-area .widget_recent_entries ul li .post-date {
-   color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer7_link_hover_color') ); ?>;
+   color: <?php echo esc_html( Theme::neuzin_options('footer7_link_hover_color') ); ?>;
 }
 
 <?php /*Footer 8 color*/ ?>
 .footer-style-8 .footer-top-area .widget h3 {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer8_title_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer8_title_color') ); ?>;
 }
 .footer-style-8 .footer-top-area:before {
 	background-image: -o-linear-gradient(30deg, <?php echo esc_html( $footer8_gradient_dark ); ?> 0%, <?php echo esc_html( $footer8_gradient_light ); ?> 100%);
@@ -655,32 +658,32 @@ h6 {
 }
 .footer-style-8 .footer-top-area .widget a,
 .footer-style-8 .footer-top-area .widget ul li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer8_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer8_link_color') ); ?>;
 }
 .footer-style-8 .footer-top-area .widget a:hover,
 .footer-style-8 .footer-top-area .widget ul li a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer8_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer8_link_hover_color') ); ?>;
 }
 .footer-style-8 .footer-top-area .corporate-address li i,
 .footer-style-8 .footer-top-area .widget_recent_entries ul li .post-date,
 .footer-style-8 .footer-top-area .rt-post-box .post-box-style ul li,
 .footer-style-8 .footer-top-area .rt-post-box .post-box-style ul li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer8_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer8_color') ); ?>;
 }
 .footer-style-8 .footer-bottom-area {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer8_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer8_color') ); ?>;
 }
 .footer-style-8 .footer-bottom-area a,
 .footer-style-8 .footer-bottom-area a:link,
 .footer-style-8 .footer-bottom-area a:visited,
 .footer-style-8 .footer-bottom-area .widget a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer8_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer8_link_color') ); ?>;
 }
 .footer-style-8 .footer-bottom-area a:hover,
 .footer-style-8 .footer-bottom-area a:link:hover,
 .footer-style-8 .footer-bottom-area a:visited:hover,
 .footer-style-8 .footer-bottom-area .widget a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer8_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer8_link_hover_color') ); ?>;
 }
 .footer-style-8 .footer-bottom-area {
 	background-image: -o-linear-gradient(30deg, <?php echo esc_html( $footer8_copy_gradient_dark ); ?> 0%, <?php echo esc_html( $footer8_copy_gradient_light ); ?> 100%);
@@ -689,53 +692,53 @@ h6 {
 
 <?php /*Footer 9 color*/ ?>
 .footer-style-9 .footer-top-area .widget h3 {
-    color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_title_color') ); ?>;
+    color: <?php echo esc_html( Theme::neuzin_options('footer9_title_color') ); ?>;
 }
 .footer-style-9 .footer-top-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_bgcolor') ); ?>;
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_color') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer9_bgcolor') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer9_color') ); ?>;
 }
 .footer-style-9 .footer-bottom-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_copy_bgcolor') ); ?>;
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_color') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('footer9_copy_bgcolor') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer9_color') ); ?>;
 }
 .footer-style-9 .footer-top-area .widget a, 
 .footer-style-9 .footer-top-area .widget ul li a {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer9_link_color') ); ?>;
 }
 .footer-style-9 .footer-top-area .widget a:hover, 
 .footer-style-9 .footer-top-area .widget ul li a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('footer9_link_hover_color') ); ?>;
 }
 .footer-style-9 .footer-bottom-area,
 .footer-style-9 .footer-bottom-area a, 
 .footer-style-9 .footer-bottom-area a:link, 
 .footer-style-9 .footer-bottom-area .widget a {
-    color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_link_color') ); ?>;
+    color: <?php echo esc_html( Theme::neuzin_options('footer9_link_color') ); ?>;
 }
 .footer-style-9 .footer-bottom-area a:hover, 
 .footer-style-9 .footer-bottom-area a:link:hover, 
 .footer-style-9 .footer-bottom-area .widget a:hover {
-    color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_link_hover_color') ); ?>;
+    color: <?php echo esc_html( Theme::neuzin_options('footer9_link_hover_color') ); ?>;
 }
 .footer-style-9 .footer-top-area .corporate-address li i,
 .footer-style-9 .footer-top-area .widget_recent_entries ul li .post-date {
-   color: <?php echo esc_html( NeuzinTheme::neuzin_options('footer9_color') ); ?>;
+   color: <?php echo esc_html( Theme::neuzin_options('footer9_color') ); ?>;
 }
 
 <?php /*Footer Bottom area*/ ?>
 .footer-bottom-area a,
 .footer-bottom-area a:link, 
 .footer-bottom-area a:visited {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('copy_link_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('copy_link_color') ); ?>;
 }
 .footer-bottom-area a:hover,
 .footer-bottom-area .widget ul li a:hover {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('copy_link_hover_color') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('copy_link_hover_color') ); ?>;
 }
 .footer-bottom-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('copyright_bgcolor') ); ?>;
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('copyright_color') ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options('copyright_bgcolor') ); ?>;
+	color: <?php echo esc_html( Theme::neuzin_options('copyright_color') ); ?>;
 }
 .rt-box-title-1 span {
 	border-top-color: <?php echo esc_html( $primary_color ); ?>;
@@ -858,13 +861,13 @@ form.post-password-form input[type="submit"]:hover {
 ---------------------------------------*/
 ?>
 .error-page-area {
-    background-color: <?php echo esc_html( NeuzinTheme::neuzin_options('error_bodybg') );?>;
+    background-color: <?php echo esc_html( Theme::neuzin_options('error_bodybg') );?>;
 }
 .error-page-area .text-1 {	
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('error_text1_color') );?>;
+	color: <?php echo esc_html( Theme::neuzin_options('error_text1_color') );?>;
 }
 .error-page-area .text-2 {
-	color: <?php echo esc_html( NeuzinTheme::neuzin_options('error_text2_color') );?>;
+	color: <?php echo esc_html( Theme::neuzin_options('error_text2_color') );?>;
 }
 <?php
 /*-------------------------------------

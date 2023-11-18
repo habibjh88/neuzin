@@ -591,6 +591,7 @@ function neuzin_load_content_area_scripts($) {
 //function Load
 function neuzin_content_load_scripts() {
     var $ = jQuery;
+    console.log('ssssssssss')
     // Preloader
     $('#preloader').fadeOut('slow', function () {
         $(this).remove();

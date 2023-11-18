@@ -6,7 +6,8 @@
  */
 
 // Can be used only in 'include' function
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 if ( $type == 'cross-sells' ) {
 	$responsive = array(
 		'0'    => array( 'items' => 1 ),
@@ -14,7 +15,7 @@ if ( $type == 'cross-sells' ) {
 		'992'  => array( 'items' => 2 ),
 	);
 }
-elseif ( NeuzinTheme::$layout == 'full-width' ) {
+elseif ( Theme::$layout == 'full-width' ) {
 	$responsive = array(
 		'0'    => array( 'items' => 1 ),
 		'480'  => array( 'items' => 2 ),
@@ -56,11 +57,11 @@ if ( !$loop ) {
 <div class="owl-wrap rt-woo-nav related products <?php echo esc_attr( $wrapper_class );?>">
 	<div class="section-title">
 		<div class="sec-title center">
-			<?php if ( NeuzinTheme::neuzin_options('wc_related_title') ) { ?>
-				<h2 class="rtin-title"><?php echo wp_kses( NeuzinTheme::neuzin_options('wc_related_title') , 'alltext_allow' );?></h2>
+			<?php if ( Theme::neuzin_options('wc_related_title') ) { ?>
+				<h2 class="rtin-title"><?php echo wp_kses( Theme::neuzin_options('wc_related_title') , 'alltext_allow' );?></h2>
 			<?php } ?>
-			<?php if ( NeuzinTheme::neuzin_options('wc_related_subtitle') ) { ?>
-			<p><?php echo wp_kses( NeuzinTheme::neuzin_options('wc_related_subtitle') , 'alltext_allow' );?></p>
+			<?php if ( Theme::neuzin_options('wc_related_subtitle') ) { ?>
+			<p><?php echo wp_kses( Theme::neuzin_options('wc_related_subtitle') , 'alltext_allow' );?></p>
 			<?php } ?>
 		</div>
 		<div class="owl-custom-nav owl-nav">

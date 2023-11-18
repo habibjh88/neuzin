@@ -4,11 +4,14 @@
  * @since   1.0
  * @version 1.0
  */
- 
+
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+
 if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
 	$neuzin_title = woocommerce_page_title( false );
 } else if ( is_404() ) {
-	$neuzin_title = NeuzinTheme::neuzin_options('error_title');
+	$neuzin_title = Theme::neuzin_options('error_title');
 } else if ( is_search() ) {
 	$neuzin_title = esc_html__( 'Search Results for : ', 'neuzin' ) . get_search_query();
 } else if ( is_home() ) {
@@ -26,25 +29,25 @@ if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
 	$neuzin_title = get_the_title();
 }
 
-if ( NeuzinTheme::$bgtype == 'bgcolor' ) {
-	$neuzin_bg = NeuzinTheme::$bgcolor;
+if ( Theme::$bgtype == 'bgcolor' ) {
+	$neuzin_bg = Theme::$bgcolor;
 } else {
-	$neuzin_bg = 'url(' . NeuzinTheme::$bgimg . ') no-repeat scroll center center / cover';
+	$neuzin_bg = 'url(' . Theme::$bgimg . ') no-repeat scroll center center / cover';
 }
 
-if ( !empty( NeuzinTheme::neuzin_options('post_banner_title') ) ){
-	$post_banner_title = NeuzinTheme::neuzin_options('post_banner_title');
+if ( !empty( Theme::neuzin_options('post_banner_title') ) ){
+	$post_banner_title = Theme::neuzin_options('post_banner_title');
 } else {
 	$post_banner_title = esc_html__( 'Our News' , 'neuzin' );
 }
 
 ?>
 
-<?php if ( NeuzinTheme::$has_banner == '1' || NeuzinTheme::$has_banner == 'on' ): ?>
+<?php if ( Theme::$has_banner == '1' || Theme::$has_banner == 'on' ): ?>
 	<div class="entry-banner" style="background:<?php echo esc_html( $neuzin_bg ); ?>">
-		<?php if ( NeuzinTheme::neuzin_options('banner_shape') ) { ?>
+		<?php if ( Theme::neuzin_options('banner_shape') ) { ?>
 
-		<ul class="shape-holder <?php if ( NeuzinTheme::neuzin_options('banner_shape_animation') == '1' ) { ?>has-animation<?php } else { ?>no-animation<?php } ?>">
+		<ul class="shape-holder <?php if ( Theme::neuzin_options('banner_shape_animation') == '1' ) { ?>has-animation<?php } else { ?>no-animation<?php } ?>">
 			<li class="shape1">
 				<div class="translate-top-50 opacity-animation transition-200 transition-delay-10">
 					<svg width="827px" height="827px">
@@ -100,7 +103,7 @@ if ( !empty( NeuzinTheme::neuzin_options('post_banner_title') ) ){
 				<?php } else { ?>
 					<h1 class="entry-title"><?php echo wp_kses( $neuzin_title , 'alltext_allow' );?></h1>
 				<?php } ?>
-				<?php if ( NeuzinTheme::$has_breadcrumb == '1' || NeuzinTheme::$has_breadcrumb == 'on' ) { ?>
+				<?php if ( Theme::$has_breadcrumb == '1' || Theme::$has_breadcrumb == 'on' ) { ?>
 					<?php get_template_part( 'template-parts/content', 'breadcrumb' );?>
 				<?php } ?>
 			</div>

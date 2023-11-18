@@ -7,8 +7,8 @@
 
 namespace devofwp\Neuzin_Core;
 
-use NeuzinTheme;
-use NeuzinTheme_Helper;
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 use \WP_Query;
 
 $prefix      = NEUZIN_CORE_THEME_PREFIX;
@@ -30,16 +30,16 @@ $args = array(
 );
 
 $query = new WP_Query( $args );
-$temp = NeuzinTheme_Helper::wp_set_temp_query( $query );
+$temp = Helper::wp_set_temp_query( $query );
 
 $id            	= get_the_id();
 $designation   	= get_post_meta( $id, 'neuzin_team_designation', true );
 $socials       	= get_post_meta( $id, 'neuzin_team_socials', true );
-$social_fields 	= NeuzinTheme_Helper::team_socials();
+$social_fields 	= Helper::team_socials();
 
 $content = get_the_content();
 $content = apply_filters( 'the_content', $content );
-$content = wp_trim_words( get_the_excerpt(), NeuzinTheme::neuzin_options('team_content_limit'), '' );
+$content = wp_trim_words( get_the_excerpt(), Theme::neuzin_options('team_content_limit'), '' );
 $content = "<p>$content</p>";
 
 ?>
@@ -56,16 +56,16 @@ $content = "<p>$content</p>";
 						the_post_thumbnail( $thumb_size );
 					}
 					else {
-						if ( !empty( NeuzinTheme::neuzin_options('no_preview_image')['id'] ) ) {
-							echo wp_get_attachment_image( NeuzinTheme::neuzin_options('no_preview_image')['id'], $thumb_size );
+						if ( !empty( Theme::neuzin_options('no_preview_image')['id'] ) ) {
+							echo wp_get_attachment_image( Theme::neuzin_options('no_preview_image')['id'], $thumb_size );
 						}
 						else {
-							echo '<img class="wp-post-image" src="' . NeuzinTheme_Helper::get_img( 'noimage_520X562.jpg' ) . '" alt="'.get_the_title().'">';
+							echo '<img class="wp-post-image" src="' . Helper::get_img( 'noimage_520X562.jpg' ) . '" alt="'.get_the_title().'">';
 						}
 					}
 					?>
 				</a>
-				<?php if ( !empty( $socials ) && NeuzinTheme::neuzin_options('team_social_display') ) { ?>
+				<?php if ( !empty( $socials ) && Theme::neuzin_options('team_social_display') ) { ?>
 				<ul class="rtin-social">
 					<?php foreach ( $socials as $key => $social ): ?>
 						<?php if ( !empty( $social ) ): ?>
@@ -79,15 +79,15 @@ $content = "<p>$content</p>";
 			<div class="mask-wrap">
 				<div class="rtin-content">
 					<h3 class="rtin-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-					<?php if ( $designation && NeuzinTheme::neuzin_options('team_desi_display') ) { ?>
+					<?php if ( $designation && Theme::neuzin_options('team_desi_display') ) { ?>
 						<div class="rtin-designation"><?php echo esc_html( $designation );?></div>
 					<?php } ?>
-					<?php if( NeuzinTheme::neuzin_options('team_excerpt_display') ) { ?>
+					<?php if( Theme::neuzin_options('team_excerpt_display') ) { ?>
 					<?php echo wp_kses_post( $content ); ?>
 					<?php } ?>
 				</div>
 			</div>
 		</div>
 	</div>
-	<?php NeuzinTheme_Helper::wp_reset_temp_query( $temp ); ?>
+	<?php Helper::wp_reset_temp_query( $temp ); ?>
 </article>

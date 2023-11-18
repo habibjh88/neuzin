@@ -4,14 +4,16 @@
  * @since   1.0
  * @version 1.0
  */
-if ( NeuzinTheme::$layout == 'full-width' ) {
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
 }
 else{
-	$neuzin_layout_class = NeuzinTheme_Helper::has_active_widget();
+	$neuzin_layout_class = Helper::has_active_widget();
 }
 
-$portfolio_layout_ops = NeuzinTheme::neuzin_options('portfolio_style');
+$portfolio_layout_ops = Theme::neuzin_options('portfolio_style');
 $f_layout = ( empty( $portfolio_layout ) || ( $portfolio_layout  == 'default' ) ) ? $portfolio_layout_ops : $portfolio_layout;
 
 ?>
@@ -20,7 +22,7 @@ $f_layout = ( empty( $portfolio_layout ) || ( $portfolio_layout  == 'default' ) 
 <div id="primary" class="content-area">
 	<div class="container">
 		<div class="row">
-			<?php if ( NeuzinTheme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
+			<?php if ( Theme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
 				<div class="<?php echo esc_attr( $neuzin_layout_class );?>">
 					<main id="main" class="site-main">
 						<?php
@@ -45,7 +47,7 @@ $f_layout = ( empty( $portfolio_layout ) || ( $portfolio_layout  == 'default' ) 
 						?>
 					</main>
 				</div>
-			<?php if ( NeuzinTheme::$layout == 'right-sidebar' ) { get_sidebar(); }	?>
+			<?php if ( Theme::$layout == 'right-sidebar' ) { get_sidebar(); }	?>
 		</div>
 	</div>
 </div>

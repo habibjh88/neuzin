@@ -4,7 +4,8 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 ?>
 <div class="product-thumb-area">
 	<?php
@@ -13,13 +14,13 @@
 	<a href="<?php the_permalink(); ?>"><?php
 	woocommerce_template_loop_product_thumbnail();
 	?></a>
-	<?php if ( NeuzinTheme::neuzin_options('wc_product_hover') ): ?>
+	<?php if ( Theme::neuzin_options('wc_product_hover') ): ?>
 		<div class="product-info">
 			<ul>
 				<li><?php woocommerce_template_loop_add_to_cart(); ?></li>
 				
 				
-				<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && NeuzinTheme::neuzin_options('wc_wishlist_icon') ): ?>
+				<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && Theme::neuzin_options('wc_wishlist_icon') ): ?>
                 <?php
                 $product_id = $product->get_id();
                 $is_in_wishlist = YITH_WCWL()->is_product_in_wishlist( $product_id, false );
@@ -51,7 +52,7 @@
                 </li>
             <?php endif; ?>
 			
-					<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && NeuzinTheme::neuzin_options('wc_compare_icon') ) { ?>
+					<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && Theme::neuzin_options('wc_compare_icon') ) { ?>
 					<li><?php echo do_shortcode( '[yith_compare_button]' ); ?> </li>					
 					<?php } ?>
 			</ul>			

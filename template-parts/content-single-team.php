@@ -4,7 +4,8 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 global $post;
 
 $neuzin_team_designation 	= get_post_meta( $post->ID, 'neuzin_team_designation', true );
@@ -15,7 +16,7 @@ $neuzin_team_skill       	= get_post_meta( $post->ID, 'neuzin_team_skill', true 
 $neuzin_team_counter      	= get_post_meta( $post->ID, 'neuzin_team_count', true );
 $socials        			= get_post_meta( $post->ID, 'neuzin_team_socials', true );
 $socials        			= array_filter( $socials );
-$socials_fields 			= NeuzinTheme_Helper::team_socials();
+$socials_fields 			= Helper::team_socials();
 
 $neuzin_team_contact_form 	= get_post_meta( $post->ID, 'neuzin_team_contact_form', true );
 
@@ -31,10 +32,10 @@ $thumb_size = 'neuzin-size5';
 							if ( has_post_thumbnail() ){
 								the_post_thumbnail( $thumb_size );
 							} else {
-								if ( !empty( NeuzinTheme::neuzin_options('no_preview_image')['id'] ) ) {
-									echo wp_get_attachment_image( NeuzinTheme::neuzin_options('no_preview_image')['id'], $thumb_size );
+								if ( !empty( Theme::neuzin_options('no_preview_image')['id'] ) ) {
+									echo wp_get_attachment_image( Theme::neuzin_options('no_preview_image')['id'], $thumb_size );
 								} else {
-									echo '<img class="wp-post-image" src="' . NeuzinTheme_Helper::get_img( 'noimage_520X562.jpg' ) . '" alt="'.get_the_title().'">';
+									echo '<img class="wp-post-image" src="' . Helper::get_img( 'noimage_520X562.jpg' ) . '" alt="'.get_the_title().'">';
 								}
 							}
 						?>	

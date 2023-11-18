@@ -5,6 +5,8 @@
  * @version 1.0
  */
 
+use devofwp\Neuzin\Theme;
+
 /*-------------------------------------
 #. Theme supports for WooCommerce
 ---------------------------------------*/
@@ -20,7 +22,7 @@ function neuzin_wc_support() {
 if ( ! function_exists( 'woocommerce_template_single_excerpt' ) ) {
 	function woocommerce_template_single_excerpt() {
 		global $post;
-		if ( ! $post->post_excerpt && !NeuzinTheme::neuzin_options('wc_show_excerpt') ) {
+		if ( ! $post->post_excerpt && !Theme::neuzin_options('wc_show_excerpt') ) {
 			return false;
 		}
 
@@ -62,7 +64,7 @@ function neuzin_wc_hide_page_title(){
 }
 
 function neuzin_wc_loop_shop_per_page(){
-	return NeuzinTheme::neuzin_options('wc_num_product');
+	return Theme::neuzin_options('wc_num_product');
 }
 
 function neuzin_wc_wrapper_start() {
@@ -82,7 +84,7 @@ function neuzin_wc_loop_product_title(){
 }
 
 function neuzin_wc_loop_shop_columns(){
-	if ( NeuzinTheme::$layout == 'full-width' ) {
+	if ( Theme::$layout == 'full-width' ) {
 		return 4;
 	}
 	return 3;
@@ -104,14 +106,14 @@ function neuzin_wc_shop_add_description(){
 		the_excerpt();
 		echo '</div></div>';
 		/*custom list info*/
-		if ( NeuzinTheme::neuzin_options('wc_product_hover') ): ?>
+		if ( Theme::neuzin_options('wc_product_hover') ): ?>
 			<div class="product-list-info">
 				<ul>
 					<li><?php woocommerce_template_loop_add_to_cart(); ?></li>
-					<?php if ( function_exists( 'YITH_WCQV_Frontend' ) && NeuzinTheme::neuzin_options('wc_quickview_icon') ): ?>
+					<?php if ( function_exists( 'YITH_WCQV_Frontend' ) && Theme::neuzin_options('wc_quickview_icon') ): ?>
 					<li><a href="" class="yith-wcqv-button" data-product_id="<?php echo esc_attr( $product->get_id() );?>"><i class="fa fa-search"></i></a></li>
 					<?php endif; ?>
-					<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && NeuzinTheme::neuzin_options('wc_wishlist_icon') ) { ?>
+					<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && Theme::neuzin_options('wc_wishlist_icon') ) { ?>
 					<?php
 					$args = array(
 					'browse_wishlist_text' => '<i class="far fa-heart"></i>',
@@ -124,7 +126,7 @@ function neuzin_wc_shop_add_description(){
 					?>
 					<li><?php echo YITH_WCWL_Shortcode::add_to_wishlist( $args );?> </li>
 					<?php } ?>
-					<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && NeuzinTheme::neuzin_options('wc_compare_icon') ) { ?>
+					<?php if ( class_exists( 'YITH_WCWL_Shortcode' ) && Theme::neuzin_options('wc_compare_icon') ) { ?>
 					<li><?php echo do_shortcode( '[yith_compare_button]' ); ?> </li>	
 					<?php } ?>
 				</ul>	
@@ -147,19 +149,19 @@ function neuzin_wc_render_meta(){
 
 function neuzin_wc_show_or_hide_related_products(){
 	// Show or hide related products
-	if ( empty( NeuzinTheme::neuzin_options('wc_related') ) ) {
+	if ( empty( Theme::neuzin_options('wc_related') ) ) {
 		remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 	}
 }
 
 function neuzin_wc_hide_product_data_tab( $tabs ){
-	if ( empty( NeuzinTheme::neuzin_options('wc_description') ) ) {
+	if ( empty( Theme::neuzin_options('wc_description') ) ) {
 		unset( $tabs['description'] );
 	}
-	if ( empty( NeuzinTheme::neuzin_options('wc_reviews') ) ) {
+	if ( empty( Theme::neuzin_options('wc_reviews') ) ) {
 		unset( $tabs['reviews'] );
 	}
-	if ( empty( NeuzinTheme::neuzin_options('wc_additional_info') ) ) {
+	if ( empty( Theme::neuzin_options('wc_additional_info') ) ) {
 		unset( $tabs['additional_information'] );
 	}
 	return $tabs;
@@ -194,7 +196,7 @@ function neuzin_wc_product_review_form( $comment_form ){
 
 function neuzin_wc_show_or_hide_cross_sells(){
 	// Show or hide related cross sells
-	if ( !empty( NeuzinTheme::neuzin_options('wc_cross_sell') ) ) {
+	if ( !empty( Theme::neuzin_options('wc_cross_sell') ) ) {
 		add_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display', 10 );
 	}
 }
@@ -208,16 +210,16 @@ function neuzin_content_after_addtocart_button_func() {
 	<div class="single-product-meta">
 		<?php
 
-		if ( NeuzinTheme::neuzin_options('wc_cats') ) {
+		if ( Theme::neuzin_options('wc_cats') ) {
 			echo wp_kses( $cats_html , 'alltext_allow' );
 		}
-		if ( NeuzinTheme::neuzin_options('wc_tags') ) {
+		if ( Theme::neuzin_options('wc_tags') ) {
 			echo wp_kses( $tags_html , 'alltext_allow' );
 		}
 
 	?>	
 	</div>	
-	<?php if ( function_exists( 'neuzin_post_share' ) && NeuzinTheme::neuzin_options('wc_share') ) { ?>
+	<?php if ( function_exists( 'neuzin_post_share' ) && Theme::neuzin_options('wc_share') ) { ?>
 		<div class="product-share"><span><?php esc_html_e( 'Share:', 'neuzin' );?></span><?php neuzin_post_share(); ?></div>
 	<?php }
 }

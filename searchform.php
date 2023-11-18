@@ -4,6 +4,8 @@
  * @since   1.0
  * @version 1.0
  */
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 ?>
 
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">

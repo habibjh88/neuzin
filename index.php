@@ -4,13 +4,14 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 // Layout class
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
 }
 else{
-	$neuzin_layout_class = NeuzinTheme_Helper::has_active_widget();
+	$neuzin_layout_class = Helper::has_active_widget();
 }
 $neuzin_is_post_archive = is_home() || ( is_archive() && get_post_type() == 'post' ) ? true : false;
 
@@ -35,7 +36,7 @@ if ( is_post_type_archive( "neuzin_team" ) || is_tax( "neuzin_team_category" ) )
 	<div class="container">
 		<div class="row">
 			<?php
-			if ( NeuzinTheme::$layout == 'left-sidebar' ) {
+			if ( Theme::$layout == 'left-sidebar' ) {
 				get_sidebar();
 			}
 			?>
@@ -44,19 +45,19 @@ if ( is_post_type_archive( "neuzin_team" ) || is_tax( "neuzin_team_category" ) )
 					<?php
 					if ( have_posts() ) { ?>
 						<?php
-						if ( $neuzin_is_post_archive && NeuzinTheme::neuzin_options('blog_style') == 'style1' ) {
+						if ( $neuzin_is_post_archive && Theme::neuzin_options('blog_style') == 'style1' ) {
 							echo '<div class="row gutters-20 rt-masonry-grid">';
 							while ( have_posts() ) : the_post();
 								get_template_part( 'template-parts/content-1', get_post_format() );
 							endwhile;
 							echo '</div>';
-						} else if ( $neuzin_is_post_archive && NeuzinTheme::neuzin_options('blog_style') == 'style2' ) {
+						} else if ( $neuzin_is_post_archive && Theme::neuzin_options('blog_style') == 'style2' ) {
 							echo '<div class="auto-clear">';
 							while ( have_posts() ) : the_post();
 								get_template_part( 'template-parts/content-2', get_post_format() );
 							endwhile;
 							echo '</div>';
-						} else if ( $neuzin_is_post_archive && NeuzinTheme::neuzin_options('blog_style') == 'style3' ) {
+						} else if ( $neuzin_is_post_archive && Theme::neuzin_options('blog_style') == 'style3' ) {
 							echo '<div class="row rt-masonry-grid">';
 							while ( have_posts() ) : the_post();
 								get_template_part( 'template-parts/content-3', get_post_format() );
@@ -78,7 +79,7 @@ if ( is_post_type_archive( "neuzin_team" ) || is_tax( "neuzin_team_category" ) )
 						}
 
 						?>
-						<?php NeuzinTheme_Helper::pagination(); ?>
+						<?php Helper::pagination(); ?>
 						
 					<?php } else {?>
 						<?php get_template_part( 'template-parts/content', 'none' );?>
@@ -86,7 +87,7 @@ if ( is_post_type_archive( "neuzin_team" ) || is_tax( "neuzin_team_category" ) )
 				</main>
 			</div>
 			<?php
-			if ( NeuzinTheme::$layout == 'right-sidebar' ) {
+			if ( Theme::$layout == 'right-sidebar' ) {
 				get_sidebar();
 			}
 			?>

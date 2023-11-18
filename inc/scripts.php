@@ -5,6 +5,8 @@
  * @version 1.0
  */
 
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 use Elementor\Plugin;
 
 
@@ -72,7 +74,7 @@ if ( ! function_exists( 'neuzin_enqueue_scripts' ) ) {
 		$dep = array( 'jquery' );
 		/*CSS*/
 		// Google fonts
-		wp_enqueue_style( 'neuzin-gfonts', NeuzinTheme_Helper::fonts_url(), array(), NEUZIN_VERSION );
+		wp_enqueue_style( 'neuzin-gfonts', Helper::fonts_url(), array(), NEUZIN_VERSION );
 
 		/*
 		// Bootstrap CSS  //@rtl
@@ -126,27 +128,27 @@ if ( ! function_exists( 'neuzin_enqueue_scripts' ) ) {
 
 		wp_enqueue_script( 'masonry' );*/
 
-		wp_enqueue_script( 'neuzin-main', get_template_directory_uri() . 'build/', $dep, NEUZIN_VERSION, true );
+		wp_enqueue_script( 'neuzin-main', get_template_directory_uri() . '/assets/build/scripts.min.js', $dep, NEUZIN_VERSION, true );
 
-		if ( ! empty( NeuzinTheme::neuzin_options( 'logo' )['url'] ) ) {
-			$logo = '<img class="logo-small" src="' . esc_url( empty( NeuzinTheme::neuzin_options( 'logo' )['url'] ) ? NEUZIN_IMG_URL . 'logo.png' : NeuzinTheme::neuzin_options( 'logo' )['url'] ) . '" />';
+		if ( ! empty( Theme::neuzin_options( 'logo' )['url'] ) ) {
+			$logo = '<img class="logo-small" src="' . esc_url( empty( Theme::neuzin_options( 'logo' )['url'] ) ? NEUZIN_IMG_URL . 'logo.png' : Theme::neuzin_options( 'logo' )['url'] ) . '" />';
 		} else {
 			$logo = '<img class="logo-small" src="' . esc_url( NEUZIN_IMG_URL . 'logo.png' ) . '" />';
 		}
 
 		$html = '';
 
-		if ( NeuzinTheme::neuzin_options( 'online_button' ) == '1' ) {
-			$html .= '<a class="button-btn" target="_self" href="' . esc_url( NeuzinTheme::neuzin_options( 'online_button_link' ) ) . '">' . esc_html( NeuzinTheme::neuzin_options( 'online_button_text' ) ) . '</a>';
+		if ( Theme::neuzin_options( 'online_button' ) == '1' ) {
+			$html .= '<a class="button-btn" target="_self" href="' . esc_url( Theme::neuzin_options( 'online_button_link' ) ) . '">' . esc_html( Theme::neuzin_options( 'online_button_text' ) ) . '</a>';
 		}
 
-		if ( NeuzinTheme::neuzin_options( 'search_icon' ) ) {
+		if ( Theme::neuzin_options( 'search_icon' ) ) {
 			ob_start();
 			get_template_part( 'template-parts/header/icon', 'barsearch' );
 			$html .= ob_get_clean();
 		}
 
-		if ( NeuzinTheme::neuzin_options( 'cart_icon' ) ) {
+		if ( Theme::neuzin_options( 'cart_icon' ) ) {
 			ob_start();
 			get_template_part( 'template-parts/header/icon', 'cart' );
 			$html .= ob_get_clean();
@@ -155,11 +157,11 @@ if ( ! function_exists( 'neuzin_enqueue_scripts' ) ) {
 
 		// localize script
 		$neuzin_localize_data = array(
-			'stickyMenu'        => NeuzinTheme::neuzin_options( 'sticky_menu' ),
-			'meanWidth'         => NeuzinTheme::neuzin_options( 'resmenu_width' ),
+			'stickyMenu'        => Theme::neuzin_options( 'sticky_menu' ),
+			'meanWidth'         => Theme::neuzin_options( 'resmenu_width' ),
 			'siteLogo'          => '<a href="' . esc_url( home_url( '/' ) ) . '" alt="' . esc_attr( get_bloginfo( 'title' ) ) . '">' . esc_html( $logo ) . '</a>' . $html,
-			'extraOffset'       => NeuzinTheme::neuzin_options( 'sticky_menu' ) ? 70 : 0,
-			'extraOffsetMobile' => NeuzinTheme::neuzin_options( 'sticky_menu' ) ? 52 : 0,
+			'extraOffset'       => Theme::neuzin_options( 'sticky_menu' ) ? 70 : 0,
+			'extraOffsetMobile' => Theme::neuzin_options( 'sticky_menu' ) ? 52 : 0,
 			'rtl'               => is_rtl() ? 'yes' : 'no',
 
 			// Ajax
@@ -206,62 +208,62 @@ add_action( 'wp_enqueue_scripts', 'neuzin_high_priority_scripts', 1500 );
 if ( ! function_exists( 'neuzin_high_priority_scripts' ) ) {
 	function neuzin_high_priority_scripts() {
 		// Dynamic style
-		NeuzinTheme_Helper::dynamic_internal_style();
+		Helper::dynamic_internal_style();
 	}
 }
 
 function neuzin_template_style() {
 	ob_start();
-	$footer_bg_img = empty( NeuzinTheme::neuzin_options( 'fbgimg' )['url'] ) ? NEUZIN_IMG_URL . 'footer1_bg.png' : NeuzinTheme::neuzin_options( 'fbgimg' )['url'];
+	$footer_bg_img = empty( Theme::neuzin_options( 'fbgimg' )['url'] ) ? NEUZIN_IMG_URL . 'footer1_bg.png' : Theme::neuzin_options( 'fbgimg' )['url'];
 
-	$footer2_bg_img = empty( NeuzinTheme::neuzin_options( 'footer2_bottom_img' )['url'] ) ? NEUZIN_IMG_URL . 'footer2_bg.png' : NeuzinTheme::neuzin_options( 'footer2_bottom_img' )['url'];
+	$footer2_bg_img = empty( Theme::neuzin_options( 'footer2_bottom_img' )['url'] ) ? NEUZIN_IMG_URL . 'footer2_bg.png' : Theme::neuzin_options( 'footer2_bottom_img' )['url'];
 	?>
 
 	.entry-banner {
-	<?php if ( NeuzinTheme::$bgtype == 'bgcolor' ): ?>
-		background-color: <?php echo esc_html( NeuzinTheme::$bgcolor ); ?>;
+	<?php if ( Theme::$bgtype == 'bgcolor' ): ?>
+		background-color: <?php echo esc_html( Theme::$bgcolor ); ?>;
 	<?php else: ?>
-		background: url(<?php echo esc_url( NeuzinTheme::$bgimg ); ?>) no-repeat scroll center center / cover;
+		background: url(<?php echo esc_url( Theme::$bgimg ); ?>) no-repeat scroll center center / cover;
 	<?php endif; ?>
 	}
 
 	.entry-banner .entry-banner-content {
-	text-align: <?php echo NeuzinTheme::$has_banner_align; ?>;
+	text-align: <?php echo Theme::$has_banner_align; ?>;
 	}
 
 	.footer-top-area {
-	<?php if ( NeuzinTheme::neuzin_options( 'footer_bgtype' ) == 'fbgcolor' ): ?>
-		background-color: <?php echo esc_html( NeuzinTheme::neuzin_options( 'fbgcolor' ) ); ?> !important;
+	<?php if ( Theme::neuzin_options( 'footer_bgtype' ) == 'fbgcolor' ): ?>
+		background-color: <?php echo esc_html( Theme::neuzin_options( 'fbgcolor' ) ); ?> !important;
 	<?php else: ?>
 		background: url(<?php echo esc_url( $footer_bg_img ); ?>) no-repeat scroll center center / cover;
 	<?php endif; ?>
 	}
 
 	.footer-style-2 .footer-area {
-	<?php if ( NeuzinTheme::neuzin_options( 'footer2_bottom_img_display' ) == 1 ): ?>
+	<?php if ( Theme::neuzin_options( 'footer2_bottom_img_display' ) == 1 ): ?>
 		background: url(<?php echo esc_url( $footer2_bg_img ); ?>) no-repeat scroll center bottom;
 	<?php endif; ?>
 	}
 
 	.content-area {
-	padding-top: <?php echo esc_html( NeuzinTheme::$padding_top ); ?>px;
-	padding-bottom: <?php echo esc_html( NeuzinTheme::$padding_bottom ); ?>px;
+	padding-top: <?php echo esc_html( Theme::$padding_top ); ?>px;
+	padding-bottom: <?php echo esc_html( Theme::$padding_bottom ); ?>px;
 	}
 	#page {
-	background: url( <?php echo NeuzinTheme::$pagebgimg; ?> );
-	background-color: <?php echo NeuzinTheme::$pagebgcolor; ?>;
+	background: url( <?php echo Theme::$pagebgimg; ?> );
+	background-color: <?php echo Theme::$pagebgcolor; ?>;
 	}
 	.single-neuzin_team #page {
 	background-image: none;
 	background-color: transparent;
 	}
 	.single-neuzin_team .site-main {
-	background-image: url( <?php echo NeuzinTheme::$pagebgimg; ?> );
-	background-color: <?php echo NeuzinTheme::$pagebgcolor; ?>;
+	background-image: url( <?php echo Theme::$pagebgimg; ?> );
+	background-color: <?php echo Theme::$pagebgcolor; ?>;
 	}
 
 	.error-page-area {
-	background-color: <?php echo esc_html( NeuzinTheme::neuzin_options( 'error_bodybg' ) ); ?>;
+	background-color: <?php echo esc_html( Theme::neuzin_options( 'error_bodybg' ) ); ?>;
 	}
 
 
@@ -270,7 +272,7 @@ function neuzin_template_style() {
 }
 
 function load_custom_wp_admin_script_gutenberg() {
-	wp_enqueue_style( 'neuzin-gfonts', NeuzinTheme_Helper::fonts_url(), array(), NEUZIN_VERSION );
+	wp_enqueue_style( 'neuzin-gfonts', Helper::fonts_url(), array(), NEUZIN_VERSION );
 	// font-awesome CSS
 	//wp_enqueue_style( 'font-awesome',       NEUZIN_CSS_URL . 'font-awesome.min.css', array(), NEUZIN_VERSION );
 	// Flaticon CSS

@@ -5,6 +5,9 @@
  * @version 1.0
  */
 
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+
 add_action( 'template_redirect', 'neuzin_template_vars' );
 if( !function_exists( 'neuzin_template_vars' ) ) {
     function neuzin_template_vars() {
@@ -35,62 +38,62 @@ if( !function_exists( 'neuzin_template_vars' ) ) {
 			
 			$layout_settings    = get_post_meta( $post_id, 'neuzin_layout_settings', true );
             
-            NeuzinTheme::$layout = ( empty( $layout_settings['neuzin_layout'] ) || $layout_settings['neuzin_layout']  == 'default' ) ? NeuzinTheme::neuzin_options($prefix . '_layout') : $layout_settings['neuzin_layout'];
+            Theme::$layout = ( empty( $layout_settings['neuzin_layout'] ) || $layout_settings['neuzin_layout']  == 'default' ) ? Theme::neuzin_options($prefix . '_layout') : $layout_settings['neuzin_layout'];
 
-			NeuzinTheme::$sidebar = ( empty( $layout_settings['neuzin_sidebar'] ) || $layout_settings['neuzin_sidebar'] == 'default' ) ? NeuzinTheme::neuzin_options($prefix . '_sidebar') : $layout_settings['neuzin_sidebar'];
+			Theme::$sidebar = ( empty( $layout_settings['neuzin_sidebar'] ) || $layout_settings['neuzin_sidebar'] == 'default' ) ? Theme::neuzin_options($prefix . '_sidebar') : $layout_settings['neuzin_sidebar'];
 			
-			NeuzinTheme::$tr_header = ( empty( $layout_settings['neuzin_tr_header'] ) || $layout_settings['neuzin_tr_header'] == 'default' ) ? NeuzinTheme::neuzin_options('tr_header') : $layout_settings['neuzin_tr_header'];
+			Theme::$tr_header = ( empty( $layout_settings['neuzin_tr_header'] ) || $layout_settings['neuzin_tr_header'] == 'default' ) ? Theme::neuzin_options('tr_header') : $layout_settings['neuzin_tr_header'];
             
-            NeuzinTheme::$top_bar = ( empty( $layout_settings['neuzin_top_bar'] ) || $layout_settings['neuzin_top_bar'] == 'default' ) ? NeuzinTheme::neuzin_options('top_bar') : $layout_settings['neuzin_top_bar'];
+            Theme::$top_bar = ( empty( $layout_settings['neuzin_top_bar'] ) || $layout_settings['neuzin_top_bar'] == 'default' ) ? Theme::neuzin_options('top_bar') : $layout_settings['neuzin_top_bar'];
             
-            NeuzinTheme::$top_bar_style = ( empty( $layout_settings['neuzin_top_bar_style'] ) || $layout_settings['neuzin_top_bar_style'] == 'default' ) ? NeuzinTheme::neuzin_options('top_bar_style') : $layout_settings['neuzin_top_bar_style'];
+            Theme::$top_bar_style = ( empty( $layout_settings['neuzin_top_bar_style'] ) || $layout_settings['neuzin_top_bar_style'] == 'default' ) ? Theme::neuzin_options('top_bar_style') : $layout_settings['neuzin_top_bar_style'];
 			
-			NeuzinTheme::$header_opt = ( empty( $layout_settings['neuzin_header_opt'] ) || $layout_settings['neuzin_header_opt'] == 'default' ) ? NeuzinTheme::neuzin_options('header_opt') : $layout_settings['neuzin_header_opt'];
+			Theme::$header_opt = ( empty( $layout_settings['neuzin_header_opt'] ) || $layout_settings['neuzin_header_opt'] == 'default' ) ? Theme::neuzin_options('header_opt') : $layout_settings['neuzin_header_opt'];
             
-            NeuzinTheme::$header_style = ( empty( $layout_settings['neuzin_header'] ) || $layout_settings['neuzin_header'] == 'default' ) ? NeuzinTheme::neuzin_options('header_style') : $layout_settings['neuzin_header'];
+            Theme::$header_style = ( empty( $layout_settings['neuzin_header'] ) || $layout_settings['neuzin_header'] == 'default' ) ? Theme::neuzin_options('header_style') : $layout_settings['neuzin_header'];
 			
-            NeuzinTheme::$footer_style = ( empty( $layout_settings['neuzin_footer'] ) || $layout_settings['neuzin_footer'] == 'default' ) ? NeuzinTheme::neuzin_options('footer_style') : $layout_settings['neuzin_footer'];
+            Theme::$footer_style = ( empty( $layout_settings['neuzin_footer'] ) || $layout_settings['neuzin_footer'] == 'default' ) ? Theme::neuzin_options('footer_style') : $layout_settings['neuzin_footer'];
 			
-			NeuzinTheme::$footer_area = ( empty( $layout_settings['neuzin_footer_area'] ) || $layout_settings['neuzin_footer_area'] == 'default' ) ? NeuzinTheme::neuzin_options('footer_area') : $layout_settings['neuzin_footer_area'];
+			Theme::$footer_area = ( empty( $layout_settings['neuzin_footer_area'] ) || $layout_settings['neuzin_footer_area'] == 'default' ) ? Theme::neuzin_options('footer_area') : $layout_settings['neuzin_footer_area'];
 			
-			NeuzinTheme::$copyright_area = ( empty( $layout_settings['neuzin_copyright_area'] ) || $layout_settings['neuzin_copyright_area'] == 'default' ) ? NeuzinTheme::neuzin_options('copyright_area') : $layout_settings['neuzin_copyright_area'];
+			Theme::$copyright_area = ( empty( $layout_settings['neuzin_copyright_area'] ) || $layout_settings['neuzin_copyright_area'] == 'default' ) ? Theme::neuzin_options('copyright_area') : $layout_settings['neuzin_copyright_area'];
             
-            $padding_top = ( empty( $layout_settings['neuzin_top_padding'] ) || $layout_settings['neuzin_top_padding'] == 'default' ) ? NeuzinTheme::neuzin_options($prefix . '_padding_top') : $layout_settings['neuzin_top_padding'];
+            $padding_top = ( empty( $layout_settings['neuzin_top_padding'] ) || $layout_settings['neuzin_top_padding'] == 'default' ) ? Theme::neuzin_options($prefix . '_padding_top') : $layout_settings['neuzin_top_padding'];
 			
-            NeuzinTheme::$padding_top = (int) $padding_top;
+            Theme::$padding_top = (int) $padding_top;
             
-            $padding_bottom = ( empty( $layout_settings['neuzin_bottom_padding'] ) || $layout_settings['neuzin_bottom_padding'] == 'default' ) ? NeuzinTheme::neuzin_options($prefix . '_padding_bottom') : $layout_settings['neuzin_bottom_padding'];
+            $padding_bottom = ( empty( $layout_settings['neuzin_bottom_padding'] ) || $layout_settings['neuzin_bottom_padding'] == 'default' ) ? Theme::neuzin_options($prefix . '_padding_bottom') : $layout_settings['neuzin_bottom_padding'];
 			
-            NeuzinTheme::$padding_bottom = (int) $padding_bottom;
+            Theme::$padding_bottom = (int) $padding_bottom;
 			
-            NeuzinTheme::$has_banner = ( empty( $layout_settings['neuzin_banner'] ) || $layout_settings['neuzin_banner'] == 'default' ) ? NeuzinTheme::neuzin_options($prefix . '_banner') : $layout_settings['neuzin_banner'];
+            Theme::$has_banner = ( empty( $layout_settings['neuzin_banner'] ) || $layout_settings['neuzin_banner'] == 'default' ) ? Theme::neuzin_options($prefix . '_banner') : $layout_settings['neuzin_banner'];
             
-            NeuzinTheme::$has_banner_align = ( empty( $layout_settings['neuzin_banner_title_align'] ) || $layout_settings['neuzin_banner_title_align'] == 'default' ) ? NeuzinTheme::neuzin_options($prefix . '_banner_title_align') : $layout_settings['neuzin_banner_title_align'];
+            Theme::$has_banner_align = ( empty( $layout_settings['neuzin_banner_title_align'] ) || $layout_settings['neuzin_banner_title_align'] == 'default' ) ? Theme::neuzin_options($prefix . '_banner_title_align') : $layout_settings['neuzin_banner_title_align'];
 			
-			NeuzinTheme::$has_breadcrumb = ( empty( $layout_settings['neuzin_breadcrumb'] ) || $layout_settings['neuzin_breadcrumb'] == 'default' ) ? NeuzinTheme::neuzin_options('breadcrumb_active') : $layout_settings['neuzin_breadcrumb'];
+			Theme::$has_breadcrumb = ( empty( $layout_settings['neuzin_breadcrumb'] ) || $layout_settings['neuzin_breadcrumb'] == 'default' ) ? Theme::neuzin_options('breadcrumb_active') : $layout_settings['neuzin_breadcrumb'];
             
-            NeuzinTheme::$bgtype = ( empty( $layout_settings['neuzin_banner_type'] ) || $layout_settings['neuzin_banner_type'] == 'default' ) ? NeuzinTheme::neuzin_options($prefix . '_bgtype') : $layout_settings['neuzin_banner_type'];
+            Theme::$bgtype = ( empty( $layout_settings['neuzin_banner_type'] ) || $layout_settings['neuzin_banner_type'] == 'default' ) ? Theme::neuzin_options($prefix . '_bgtype') : $layout_settings['neuzin_banner_type'];
             
-            NeuzinTheme::$bgcolor = empty( $layout_settings['neuzin_banner_bgcolor'] ) ? NeuzinTheme::neuzin_options($prefix . '_bgcolor') : $layout_settings['neuzin_banner_bgcolor'];
+            Theme::$bgcolor = empty( $layout_settings['neuzin_banner_bgcolor'] ) ? Theme::neuzin_options($prefix . '_bgcolor') : $layout_settings['neuzin_banner_bgcolor'];
 			
 			if( !empty( $layout_settings['neuzin_banner_bgimg'] ) ) {
                 $attch_url      = wp_get_attachment_image_src( $layout_settings['neuzin_banner_bgimg'], 'full', true );
-                NeuzinTheme::$bgimg = $attch_url[0];
-            } elseif( !empty( NeuzinTheme::neuzin_options($prefix . '_bgimg')['id'] ) ) {
-                $attch_url      = wp_get_attachment_image_src( NeuzinTheme::neuzin_options($prefix . '_bgimg')['id'], 'full', true );
-                NeuzinTheme::$bgimg = $attch_url[0];
+                Theme::$bgimg = $attch_url[0];
+            } elseif( !empty( Theme::neuzin_options($prefix . '_bgimg')['id'] ) ) {
+                $attch_url      = wp_get_attachment_image_src( Theme::neuzin_options($prefix . '_bgimg')['id'], 'full', true );
+                Theme::$bgimg = $attch_url[0];
             } else {
-                NeuzinTheme::$bgimg = NEUZIN_IMG_URL . 'banner.jpg';
+                Theme::$bgimg = NEUZIN_IMG_URL . 'banner.jpg';
             }
 			
-			NeuzinTheme::$pagebgcolor = empty( $layout_settings['neuzin_page_bgcolor'] ) ? NeuzinTheme::neuzin_options($prefix . '_page_bgcolor') : $layout_settings['neuzin_page_bgcolor'];
+			Theme::$pagebgcolor = empty( $layout_settings['neuzin_page_bgcolor'] ) ? Theme::neuzin_options($prefix . '_page_bgcolor') : $layout_settings['neuzin_page_bgcolor'];
             
             if( !empty( $layout_settings['neuzin_page_bgimg'] ) ) {
                 $attch_url      = wp_get_attachment_image_src( $layout_settings['neuzin_page_bgimg'], 'full', true );
-                NeuzinTheme::$pagebgimg = $attch_url[0];
-            } elseif( !empty( NeuzinTheme::neuzin_options($prefix . '_bgimg')['id'] ) ) {
-                $attch_url      = wp_get_attachment_image_src( NeuzinTheme::neuzin_options($prefix . '_page_bgimg')['id'], 'full', true );
-                NeuzinTheme::$pagebgimg = $attch_url[0];
+                Theme::$pagebgimg = $attch_url[0];
+            } elseif( !empty( Theme::neuzin_options($prefix . '_bgimg')['id'] ) ) {
+                $attch_url      = wp_get_attachment_image_src( Theme::neuzin_options($prefix . '_page_bgimg')['id'], 'full', true );
+                Theme::$pagebgimg = $attch_url[0];
             }
         }
         
@@ -110,35 +113,35 @@ if( !function_exists( 'neuzin_template_vars' ) ) {
                 $prefix = 'blog';
             }
             
-            NeuzinTheme::$layout         		= NeuzinTheme::neuzin_options($prefix . '_layout');
-            NeuzinTheme::$tr_header      		= NeuzinTheme::neuzin_options('tr_header');
-            NeuzinTheme::$top_bar        		= NeuzinTheme::neuzin_options('top_bar');
-            NeuzinTheme::$header_opt      		= NeuzinTheme::neuzin_options('header_opt');
-            NeuzinTheme::$footer_area     		= NeuzinTheme::neuzin_options('footer_area');
-			NeuzinTheme::$copyright_area  		= NeuzinTheme::neuzin_options('copyright_area');
-            NeuzinTheme::$top_bar_style  		= NeuzinTheme::neuzin_options('top_bar_style');
-            NeuzinTheme::$header_style   		= NeuzinTheme::neuzin_options('header_style');
-            NeuzinTheme::$footer_style   		= NeuzinTheme::neuzin_options('footer_style');
-            NeuzinTheme::$padding_top    		= NeuzinTheme::neuzin_options($prefix . '_padding_top');
-            NeuzinTheme::$padding_bottom 		= NeuzinTheme::neuzin_options($prefix . '_padding_bottom');
-            NeuzinTheme::$has_banner     		= NeuzinTheme::neuzin_options($prefix . '_banner');
-            NeuzinTheme::$has_banner_align 		= NeuzinTheme::neuzin_options($prefix . '_banner_title_align');
-            NeuzinTheme::$has_breadcrumb 		= NeuzinTheme::neuzin_options($prefix . '_breadcrumb');
-            NeuzinTheme::$bgtype         		= NeuzinTheme::neuzin_options($prefix . '_bgtype');
-            NeuzinTheme::$bgcolor        		= NeuzinTheme::neuzin_options($prefix . '_bgcolor');
+            Theme::$layout         		= Theme::neuzin_options($prefix . '_layout');
+            Theme::$tr_header      		= Theme::neuzin_options('tr_header');
+            Theme::$top_bar        		= Theme::neuzin_options('top_bar');
+            Theme::$header_opt      		= Theme::neuzin_options('header_opt');
+            Theme::$footer_area     		= Theme::neuzin_options('footer_area');
+			Theme::$copyright_area  		= Theme::neuzin_options('copyright_area');
+            Theme::$top_bar_style  		= Theme::neuzin_options('top_bar_style');
+            Theme::$header_style   		= Theme::neuzin_options('header_style');
+            Theme::$footer_style   		= Theme::neuzin_options('footer_style');
+            Theme::$padding_top    		= Theme::neuzin_options($prefix . '_padding_top');
+            Theme::$padding_bottom 		= Theme::neuzin_options($prefix . '_padding_bottom');
+            Theme::$has_banner     		= Theme::neuzin_options($prefix . '_banner');
+            Theme::$has_banner_align 		= Theme::neuzin_options($prefix . '_banner_title_align');
+            Theme::$has_breadcrumb 		= Theme::neuzin_options($prefix . '_breadcrumb');
+            Theme::$bgtype         		= Theme::neuzin_options($prefix . '_bgtype');
+            Theme::$bgcolor        		= Theme::neuzin_options($prefix . '_bgcolor');
 			
-            if( !empty( NeuzinTheme::neuzin_options($prefix . '_bgimg')['id'] ) ) {
-                $attch_url      = wp_get_attachment_image_src( NeuzinTheme::neuzin_options($prefix . '_bgimg')['id'], 'full', true );
-                NeuzinTheme::$bgimg = $attch_url[0];
+            if( !empty( Theme::neuzin_options($prefix . '_bgimg')['id'] ) ) {
+                $attch_url      = wp_get_attachment_image_src( Theme::neuzin_options($prefix . '_bgimg')['id'], 'full', true );
+                Theme::$bgimg = $attch_url[0];
             } else {
-                NeuzinTheme::$bgimg = NEUZIN_IMG_URL . 'banner.jpg';
+                Theme::$bgimg = NEUZIN_IMG_URL . 'banner.jpg';
             }
 			
-           	NeuzinTheme::$pagebgcolor = NeuzinTheme::neuzin_options($prefix . '_page_bgcolor');
+           	Theme::$pagebgcolor = Theme::neuzin_options($prefix . '_page_bgcolor');
 			
-            if( !empty( NeuzinTheme::neuzin_options($prefix . '_page_bgimg')['id'] ) ) {
-                $attch_url      = wp_get_attachment_image_src( NeuzinTheme::neuzin_options($prefix . '_page_bgimg')['id'], 'full', true );
-                NeuzinTheme::$pagebgimg = $attch_url[0];
+            if( !empty( Theme::neuzin_options($prefix . '_page_bgimg')['id'] ) ) {
+                $attch_url      = wp_get_attachment_image_src( Theme::neuzin_options($prefix . '_page_bgimg')['id'], 'full', true );
+                Theme::$pagebgimg = $attch_url[0];
             }
         }
     }
@@ -149,20 +152,20 @@ add_filter( 'body_class', 'neuzin_body_classes' );
 if( !function_exists( 'neuzin_body_classes' ) ) {
     function neuzin_body_classes( $classes ) {
         
-        $classes[] = 'header-style-'. NeuzinTheme::$header_style;		
-        $classes[] = 'footer-style-'. NeuzinTheme::$footer_style;
+        $classes[] = 'header-style-'. Theme::$header_style;		
+        $classes[] = 'footer-style-'. Theme::$footer_style;
 
-        if ( NeuzinTheme::$top_bar == 1 || NeuzinTheme::$top_bar == 'on' ){
-            $classes[] = 'has-topbar topbar-style-'. NeuzinTheme::$top_bar_style;
+        if ( Theme::$top_bar == 1 || Theme::$top_bar == 'on' ){
+            $classes[] = 'has-topbar topbar-style-'. Theme::$top_bar_style;
         }
 
-        if ( NeuzinTheme::$tr_header == 1 || NeuzinTheme::$tr_header == 'on' ){
+        if ( Theme::$tr_header == 1 || Theme::$tr_header == 'on' ){
            $classes[] = 'trheader';
         }
         
-        $classes[] = ( NeuzinTheme::$layout == 'full-width' ) ? 'no-sidebar' : 'has-sidebar';
+        $classes[] = ( Theme::$layout == 'full-width' ) ? 'no-sidebar' : 'has-sidebar';
 		
-		$classes[] = ( NeuzinTheme::$layout == 'left-sidebar' ) ? 'left-sidebar' : 'right-sidebar';
+		$classes[] = ( Theme::$layout == 'left-sidebar' ) ? 'left-sidebar' : 'right-sidebar';
         
         if( isset( $_COOKIE["shopview"] ) && $_COOKIE["shopview"] == 'list' ) {
             $classes[] = 'product-list-view';
@@ -170,7 +173,7 @@ if( !function_exists( 'neuzin_body_classes' ) ) {
             $classes[] = 'product-grid-view';
         }
 		if ( is_singular('post') ) {
-			$classes[] =  ' post-detail-' . NeuzinTheme::neuzin_options('post_style');
+			$classes[] =  ' post-detail-' . Theme::neuzin_options('post_style');
         }
         return $classes;
     }

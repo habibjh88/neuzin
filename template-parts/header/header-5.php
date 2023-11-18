@@ -4,25 +4,26 @@
  * @since   1.0
  * @version 1.0
  */
-
-$nav_menu_args = NeuzinTheme_Helper::nav_menu_args();
-$neuzin_socials = NeuzinTheme_Helper::socials();
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$nav_menu_args = Helper::nav_menu_args();
+$neuzin_socials = Helper::socials();
 // Logo
-$neuzin_light_logo = empty( NeuzinTheme::neuzin_options('logo_light')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-light.png'.'">' : wp_get_attachment_image(NeuzinTheme::neuzin_options('logo_light')['id'],'full');
-$neuzin_dark_logo = empty(  NeuzinTheme::neuzin_options('logo')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-dark.png'.'">' :  wp_get_attachment_image(NeuzinTheme::neuzin_options('logo')['id'],'full'); 
+$neuzin_light_logo = empty( Theme::neuzin_options('logo_light')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-light.png'.'">' : wp_get_attachment_image(Theme::neuzin_options('logo_light')['id'],'full');
+$neuzin_dark_logo = empty(  Theme::neuzin_options('logo')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-dark.png'.'">' :  wp_get_attachment_image(Theme::neuzin_options('logo')['id'],'full'); 
 
 ?>
 
 <div class="masthead-container header-controll" id="sticker">
 	<div class="container">
 		<div class="header-5-wrap">
-			<?php if ( NeuzinTheme::neuzin_options('quick_contact') == '1' ) { ?>
+			<?php if ( Theme::neuzin_options('quick_contact') == '1' ) { ?>
 			<div class="info-wrap">				
 				<div class="icon-left">
 				<i class="flaticon-phone-call"></i>
 				</div>
-				<div class="info"><span><?php $header_hotline_txt = NeuzinTheme::neuzin_options('header_hotline_txt');
-				if ( !empty( $header_hotline_txt ) ){ echo esc_html( $header_hotline_txt ); } else { esc_html_e( 'Call Us Now', 'neuzin' ); } ?></span><a href="tel:<?php echo esc_attr( NeuzinTheme::neuzin_options('phone') );?>"><?php echo wp_kses( NeuzinTheme::neuzin_options('phone') , 'alltext_allow' );?></a></div>					
+				<div class="info"><span><?php $header_hotline_txt = Theme::neuzin_options('header_hotline_txt');
+				if ( !empty( $header_hotline_txt ) ){ echo esc_html( $header_hotline_txt ); } else { esc_html_e( 'Call Us Now', 'neuzin' ); } ?></span><a href="tel:<?php echo esc_attr( Theme::neuzin_options('phone') );?>"><?php echo wp_kses( Theme::neuzin_options('phone') , 'alltext_allow' );?></a></div>					
 			</div>
 			<?php } ?>	
 			<div class="header-5-middle">

@@ -4,8 +4,9 @@
  * @since   1.0
  * @version 1.0
  */
-
-$neuzin_has_entry_meta  = ( NeuzinTheme::neuzin_options('blog_cats') || NeuzinTheme::neuzin_options('blog_date') || NeuzinTheme::neuzin_options('blog_author_name') || NeuzinTheme::neuzin_options('blog_comment_num') || NeuzinTheme::neuzin_options('blog_view') && function_exists( 'neuzin_views' ) || NeuzinTheme::neuzin_options('blog_length') && function_exists( 'neuzin_reading_time' ) ) ? true : false;
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$neuzin_has_entry_meta  = ( Theme::neuzin_options('blog_cats') || Theme::neuzin_options('blog_date') || Theme::neuzin_options('blog_author_name') || Theme::neuzin_options('blog_comment_num') || Theme::neuzin_options('blog_view') && function_exists( 'neuzin_views' ) || Theme::neuzin_options('blog_length') && function_exists( 'neuzin_reading_time' ) ) ? true : false;
 
 $thumb_size = 'neuzin-size1';
 $neuzin_time_html       = sprintf( '%s<span>%s</span><span>%s</span>', get_the_time( 'd' ), get_the_time( 'M' ), get_the_time( 'Y' ) );
@@ -19,7 +20,7 @@ $neuzin_comments_html = '<span class="comment-number">'. $neuzin_comments_number
 $id = get_the_ID();
 $content = get_the_content();
 $content = apply_filters( 'the_content', $content );
-$content = wp_trim_words( get_the_excerpt(), NeuzinTheme::neuzin_options('post_content_limit'), '' );
+$content = wp_trim_words( get_the_excerpt(), Theme::neuzin_options('post_content_limit'), '' );
 
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'blog-layout-2' ); ?>>
@@ -27,17 +28,17 @@ $content = wp_trim_words( get_the_excerpt(), NeuzinTheme::neuzin_options('post_c
 		<div class="blog-item-content">
 			<?php if ( $neuzin_has_entry_meta ) { ?>
 			<ul class="blog-meta">
-				<?php if ( NeuzinTheme::neuzin_options('blog_date') ) { ?>
+				<?php if ( Theme::neuzin_options('blog_date') ) { ?>
 				<li><?php echo get_the_date(); ?></li>
-				<?php } if ( NeuzinTheme::neuzin_options('blog_author_name') ) { ?>
+				<?php } if ( Theme::neuzin_options('blog_author_name') ) { ?>
 				<li class="item-author"><?php esc_html_e( 'by ', 'neuzin' );?><?php the_author_posts_link(); ?></li>
-				<?php } if ( NeuzinTheme::neuzin_options('blog_cats') ) { ?>
+				<?php } if ( Theme::neuzin_options('blog_cats') ) { ?>
 				<li class="blog-cat"><?php echo the_category( ', ' );?></li>
-				<?php } if ( NeuzinTheme::neuzin_options('blog_comment_num') ) { ?>
+				<?php } if ( Theme::neuzin_options('blog_comment_num') ) { ?>
 				<li><a href="<?php echo get_comments_link( get_the_ID() ); ?>"><?php echo wp_kses( $neuzin_comments_html , 'alltext_allow' );?></a></li>
-				<?php } if ( NeuzinTheme::neuzin_options('blog_length') && function_exists( 'neuzin_reading_time' ) ) { ?>
+				<?php } if ( Theme::neuzin_options('blog_length') && function_exists( 'neuzin_reading_time' ) ) { ?>
 				<li class="meta-reading-time meta-item"><?php echo neuzin_reading_time(); ?></li>
-				<?php } if ( NeuzinTheme::neuzin_options('blog_view') && function_exists( 'neuzin_views' ) ) { ?>
+				<?php } if ( Theme::neuzin_options('blog_view') && function_exists( 'neuzin_views' ) ) { ?>
 				<li><span class="meta-views meta-item "><?php echo neuzin_views(); ?></span></li>
 				<?php } ?>
 			</ul>

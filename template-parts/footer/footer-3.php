@@ -1,5 +1,7 @@
 <?php
-$neuzin_footer_column = NeuzinTheme::neuzin_options('footer_column_3');
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$neuzin_footer_column = Theme::neuzin_options('footer_column_3');
 switch ( $neuzin_footer_column ) {
 	case '1':
 	$neuzin_footer_class = 'col-lg-12 col-sm-12 col-12';
@@ -15,10 +17,10 @@ switch ( $neuzin_footer_column ) {
 	break;
 }
 // Logo
-$neuzin_light_logo = empty( NeuzinTheme::neuzin_options('footer_logo_light')['url'] ) ? NEUZIN_IMG_URL . 'logo-light.png' : NeuzinTheme::neuzin_options('footer_logo_light')['url'];
-$neuzin_socials = NeuzinTheme_Helper::socials();
+$neuzin_light_logo = empty( Theme::neuzin_options('footer_logo_light')['url'] ) ? NEUZIN_IMG_URL . 'logo-light.png' : Theme::neuzin_options('footer_logo_light')['url'];
+$neuzin_socials = Helper::socials();
 ?>
-<?php if ( NeuzinTheme::$footer_area == 1 || NeuzinTheme::$footer_area == 'on' ){ ?>
+<?php if ( Theme::$footer_area == 1 || Theme::$footer_area == 'on' ){ ?>
 	<div class="footer-top-area">
 		<div class="container">
 			<div class="row">
@@ -34,11 +36,11 @@ $neuzin_socials = NeuzinTheme_Helper::socials();
 	</div>
 <?php } ?>
 
-<?php if ( NeuzinTheme::$copyright_area == 1 || NeuzinTheme::$copyright_area == 'on' ) { ?>
+<?php if ( Theme::$copyright_area == 1 || Theme::$copyright_area == 'on' ) { ?>
 	<div class="footer-bottom-area">
 		<div class="container">
 			<div class="copyright_wrap">
-				<div class="copyright"><?php echo wp_kses_post( NeuzinTheme::neuzin_options('copyright_text') );?></div>
+				<div class="copyright"><?php echo wp_kses_post( Theme::neuzin_options('copyright_text') );?></div>
 				<?php if(is_active_sidebar( 'copyright_widget' )) { ?>
 				<div class="copyright_widget"><?php dynamic_sidebar( 'copyright_widget' ); ?></div>
 				<?php } ?>

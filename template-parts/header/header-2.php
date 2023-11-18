@@ -4,11 +4,12 @@
  * @since   1.0
  * @version 1.0
  */
-
-$nav_menu_args = NeuzinTheme_Helper::nav_menu_args();
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$nav_menu_args = Helper::nav_menu_args();
 // Logo
-$neuzin_light_logo = empty( NeuzinTheme::neuzin_options('logo_light')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-light.png'.'">' : wp_get_attachment_image(NeuzinTheme::neuzin_options('logo_light')['id'],'full');
-$neuzin_dark_logo = empty(  NeuzinTheme::neuzin_options('logo')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-dark.png'.'">' :  wp_get_attachment_image(NeuzinTheme::neuzin_options('logo')['id'],'full'); 
+$neuzin_light_logo = empty( Theme::neuzin_options('logo_light')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-light.png'.'">' : wp_get_attachment_image(Theme::neuzin_options('logo_light')['id'],'full');
+$neuzin_dark_logo = empty(  Theme::neuzin_options('logo')['id'] ) ? '<img width="138" height="59" alt="'.get_bloginfo( 'name' ).'" src="'.NEUZIN_IMG_URL . 'logo-dark.png'.'">' :  wp_get_attachment_image(Theme::neuzin_options('logo')['id'],'full');
 
 ?>
 <div class="masthead-container header-controll" id="sticker">
@@ -24,20 +25,20 @@ $neuzin_dark_logo = empty(  NeuzinTheme::neuzin_options('logo')['id'] ) ? '<img 
 				</div>
 			</div>
 			<div class="menu-right-wrap header-icon-area">
-				<?php if ( NeuzinTheme::neuzin_options('search_icon') ) { ?>
+				<?php if ( Theme::neuzin_options('search_icon') ) { ?>
 					<?php get_template_part( 'template-parts/header/icon', 'search' );?>
 				<?php } ?>
-				<?php if ( NeuzinTheme::neuzin_options('cart_icon') ) { ?>
+				<?php if ( Theme::neuzin_options('cart_icon') ) { ?>
 					<?php get_template_part( 'template-parts/header/icon', 'cart' );?>
 				<?php } ?>
-				<?php if ( NeuzinTheme::neuzin_options('online_button') == '1' ) { ?>
+				<?php if ( Theme::neuzin_options('online_button') == '1' ) { ?>
 				<div class="header-button-wrap">
 					<div class="header-button">
-						<a class="button-btn" target="_self" href="<?php echo esc_url( NeuzinTheme::neuzin_options('online_button_link')  );?>"><?php echo esc_html( NeuzinTheme::neuzin_options('online_button_text') );?></a>
+						<a class="button-btn" target="_self" href="<?php echo esc_url( Theme::neuzin_options('online_button_link')  );?>"><?php echo esc_html( Theme::neuzin_options('online_button_text') );?></a>
 					</div>
 				</div>
 				<?php } ?>
-				<?php if ( NeuzinTheme::neuzin_options('vertical_menu_icon') && has_nav_menu( 'topright' ) ) { ?>
+				<?php if ( Theme::neuzin_options('vertical_menu_icon') && has_nav_menu( 'topright' ) ) { ?>
 				<div class="header-icon-area">
 					<?php get_template_part( 'template-parts/header/icon', 'menu' ); ?>
 				</div>
@@ -57,20 +58,20 @@ $neuzin_dark_logo = empty(  NeuzinTheme::neuzin_options('logo')['id'] ) ? '<img 
 				<?php wp_nav_menu( $nav_menu_args ); ?>
 			</div>
 			<div class="menu-right-wrap header-icon-area">
-				<?php if ( NeuzinTheme::neuzin_options('search_icon') ) { ?>
+				<?php if ( Theme::neuzin_options('search_icon') ) { ?>
 					<?php get_template_part( 'template-parts/header/icon', 'search' );?>
 				<?php } ?>
-				<?php if ( NeuzinTheme::neuzin_options('cart_icon') ) { ?>
+				<?php if ( Theme::neuzin_options('cart_icon') ) { ?>
 					<?php get_template_part( 'template-parts/header/icon', 'cart' );?>
 				<?php } ?>
-				<?php if ( NeuzinTheme::neuzin_options('online_button') == '1' ) { ?>
+				<?php if ( Theme::neuzin_options('online_button') == '1' ) { ?>
 				<div class="header-button-wrap">
 					<div class="header-button">
-						<a class="button-btn" target="_self" href="<?php echo esc_url( NeuzinTheme::neuzin_options('online_button_link')  );?>"><?php echo esc_html( NeuzinTheme::neuzin_options('online_button_text') );?></a>
+						<a class="button-btn" target="_self" href="<?php echo esc_url( Theme::neuzin_options('online_button_link')  );?>"><?php echo esc_html( Theme::neuzin_options('online_button_text') );?></a>
 					</div>
 				</div>
 				<?php } ?>
-				<?php if ( NeuzinTheme::neuzin_options('vertical_menu_icon') && has_nav_menu( 'topright' ) ) { ?>
+				<?php if ( Theme::neuzin_options('vertical_menu_icon') && has_nav_menu( 'topright' ) ) { ?>
 				<div class="header-icon-area">
 					<?php get_template_part( 'template-parts/header/icon', 'menu' ); ?>
 				</div>

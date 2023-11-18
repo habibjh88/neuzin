@@ -7,11 +7,10 @@
  * @version 1.0
  */
 
-use devofwp\Neuzin\Helper;
+namespace devofwp\Neuzin;
 
-Helper::requires( 'icon-trait.php' );
-Helper::requires( 'icon-trait.php' );
 // Includes
+//Helper::requires( 'icon-trait.php' );
 Helper::requires( 'helper-functions.php' );
 Helper::requires( 'redux-config.php' );
 Helper::requires( 'theme.php' );

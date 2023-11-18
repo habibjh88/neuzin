@@ -6,8 +6,9 @@
  */
 
 // Layout class
-
-if ( NeuzinTheme::$layout == 'full-width' ) {
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-xs-12';
 	$col_class    = 'col-lg-4 col-md-6 col-sm-6 col-xs-12 no-equal-item';
 }
@@ -18,10 +19,10 @@ else{
 
 // Template
 
-if ( NeuzinTheme::neuzin_options('team_style') == 'style1' ){
+if ( Theme::neuzin_options('team_style') == 'style1' ){
 	$team_archive_layout = "team-default team-multi-layout-1 team-grid-style1";
 	$template 				 = 'team-1';
-}elseif( NeuzinTheme::neuzin_options('team_style') == 'style2' ){
+}elseif( Theme::neuzin_options('team_style') == 'style2' ){
 	$team_archive_layout = "team-default team-multi-layout-2 team-grid-style2";
 	$template 				 = 'team-2';
 }else{
@@ -35,7 +36,7 @@ if ( NeuzinTheme::neuzin_options('team_style') == 'style1' ){
 	<div class="container">
 		<div class="row">
 			<?php
-				if ( NeuzinTheme::$layout == 'left-sidebar' ) {
+				if ( Theme::$layout == 'left-sidebar' ) {
 					get_sidebar();
 				}
 			?>
@@ -51,14 +52,14 @@ if ( NeuzinTheme::neuzin_options('team_style') == 'style1' ){
 							<?php endwhile; ?>
 						</div>
  
-					<?php NeuzinTheme_Helper::pagination(); ?>	
+					<?php Helper::pagination(); ?>	
 					<?php else:?>
 						<?php get_template_part( 'template-parts/content', 'none' );?>
 					<?php endif;?>
 				</main>
 			</div>
 			<?php
-				if( NeuzinTheme::$layout == 'right-sidebar' ){			
+				if( Theme::$layout == 'right-sidebar' ){			
 					get_sidebar();
 				}
 			?>

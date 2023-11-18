@@ -5,20 +5,22 @@
  * @version 1.0
  */
 
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 // Layout class
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
 }
 else{
-	$neuzin_layout_class = NeuzinTheme_Helper::has_active_widget();
+	$neuzin_layout_class = Helper::has_active_widget();
 }
 ?>
 <?php get_header(); ?>
 <div id="primary" class="content-area">
-	<?php if ( NeuzinTheme::neuzin_options('post_style') == 'style1' ) { ?>
+	<?php if ( Theme::neuzin_options('post_style') == 'style1' ) { ?>
 		<div class="container">
 			<div class="row">
-				<?php if ( NeuzinTheme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
+				<?php if ( Theme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
 					<div class="<?php echo esc_attr( $neuzin_layout_class );?>">
 						<main id="main" class="site-main">
 							<?php while ( have_posts() ) : the_post(); ?>
@@ -26,10 +28,10 @@ else{
 							<?php endwhile; ?>
 						</main>
 					</div>
-				<?php if ( NeuzinTheme::$layout == 'right-sidebar' ) { get_sidebar(); }	?>
+				<?php if ( Theme::$layout == 'right-sidebar' ) { get_sidebar(); }	?>
 			</div>
 		</div>
-	<?php } else if ( NeuzinTheme::neuzin_options('post_style') == 'style2' ) { ?>
+	<?php } else if ( Theme::neuzin_options('post_style') == 'style2' ) { ?>
 		<div class="container">
 			<div class="row">
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -37,7 +39,7 @@ else{
 			<?php endwhile; ?>
 			</div>
 		</div>
-	<?php } else if ( NeuzinTheme::neuzin_options('post_style') == 'style3' ) { ?>
+	<?php } else if ( Theme::neuzin_options('post_style') == 'style3' ) { ?>
 		<div class="container">
 			<div class="row">
 			<?php while ( have_posts() ) : the_post(); ?>

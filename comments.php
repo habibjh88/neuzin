@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 			wp_list_comments(
 				array(
 					'style'             => 'ul',
-					'callback'          => 'NeuzinTheme_Helper::comments_callback',
+					'callback'          => 'Helper::comments_callback',
 					'reply_text'        => esc_html__( 'Reply', 'neuzin' ),
 					'avatar_size'       => 105,
 					'format'            => 'html5',

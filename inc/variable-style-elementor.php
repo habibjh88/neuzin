@@ -4,15 +4,17 @@
  * @since   1.0
  * @version 1.0
  */
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 
-$primary_color     = NeuzinTheme::neuzin_options('primary_color'); // #5a49f8
-$primary_rgb       = NeuzinTheme_Helper::hex2rgb( $primary_color ); // 90, 73, 248
-$secondary_color   = NeuzinTheme::neuzin_options('secondary_color'); // #7a64f2
-$secondary_rgb     = NeuzinTheme_Helper::hex2rgb( $secondary_color ); // 122, 100, 242
-$dark_color        = NeuzinTheme::neuzin_options('dark_color'); // #750ed5
-$dark_rgb          = NeuzinTheme_Helper::hex2rgb( $dark_color ); // 117, 14, 213
+$primary_color     = Theme::neuzin_options('primary_color'); // #5a49f8
+$primary_rgb       = Helper::hex2rgb( $primary_color ); // 90, 73, 248
+$secondary_color   = Theme::neuzin_options('secondary_color'); // #7a64f2
+$secondary_rgb     = Helper::hex2rgb( $secondary_color ); // 122, 100, 242
+$dark_color        = Theme::neuzin_options('dark_color'); // #750ed5
+$dark_rgb          = Helper::hex2rgb( $dark_color ); // 117, 14, 213
 
-$tertiary_color    = NeuzinTheme::neuzin_options('tertiary_color'); // #04d5f4
+$tertiary_color    = Theme::neuzin_options('tertiary_color'); // #04d5f4
 
 /*---------------------------------    
 INDEX

@@ -4,7 +4,8 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 ?>
 <div class="woo-shop-top">
     <div class="col-md-5 col-sm-12 col-12">

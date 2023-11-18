@@ -6,6 +6,8 @@
  *
  * @version 1.0
  */
+
+use devofwp\Neuzin\Helper;
 if (! class_exists('Redux')) {
 	return;
 }
@@ -1840,7 +1842,7 @@ function neuzin_redux_post_type_fields($prefix) {
 			'id'       => $prefix . '_sidebar',
 			'type'     => 'select',
 			'title'    => esc_html__('Custom Sidebar', 'neuzin'),
-			'options'  => NeuzinTheme_Helper::custom_sidebar_fields(),
+			'options'  => Helper::custom_sidebar_fields(),
 			'default'  => 'sidebar',
 			'required' => [$prefix . '_layout', '!=', 'full-width'],
 		],

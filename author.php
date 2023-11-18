@@ -4,9 +4,10 @@
  * @since   1.0
  * @version 1.0
  */
-
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 // Layout class
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
 }
 else{
@@ -29,11 +30,11 @@ $neuzin_author_designation = get_user_meta( $author, 'neuzin_author_designation'
 <div id="primary" class="content-area">
 	<div class="container">
 		<div class="row">
-			<?php if ( NeuzinTheme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
+			<?php if ( Theme::$layout == 'left-sidebar' ) { get_sidebar(); } ?>
 			<div class="<?php echo esc_attr( $neuzin_layout_class );?>">
 				<main id="main" class="site-main">
 					<!-- author bio -->
-					<?php if ( NeuzinTheme::neuzin_options('post_author_bio') == '1' ) { ?>
+					<?php if ( Theme::neuzin_options('post_author_bio') == '1' ) { ?>
 						<div class="media about-author">
 							<div class="<?php if ( is_rtl() ) { ?>pull-right<?php } else { ?>pull-left<?php } ?>">
 								<?php echo get_avatar( $author, 105 ); ?>
@@ -67,14 +68,14 @@ $neuzin_author_designation = get_user_meta( $author, 'neuzin_author_designation'
 								get_template_part( 'template-parts/content-3', get_post_format() );
 							endwhile;
 						?>
-						<div class="mt50"><?php NeuzinTheme_Helper::pagination();?></div>
+						<div class="mt50"><?php Helper::pagination();?></div>
 					<?php else: ?>
 						<?php get_template_part( 'template-parts/content', 'none' );?>
 					<?php endif;?>
 				</main>					
 			</div>
 			<?php
-			if ( NeuzinTheme::$layout == 'right-sidebar' ) {
+			if ( Theme::$layout == 'right-sidebar' ) {
 				get_sidebar();
 			}
 			?>

@@ -4,12 +4,14 @@
  * @since   1.0
  * @version 1.0
  */
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // Layout class
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
 } else {
-	$neuzin_layout_class = NeuzinTheme_Helper::has_active_widget();
+	$neuzin_layout_class = Helper::has_active_widget();
 }
 ?>
 <?php get_header(); ?>
@@ -17,7 +19,7 @@ if ( NeuzinTheme::$layout == 'full-width' ) {
 	<div class="container">
 		<div class="row">
 			<?php
-			if ( NeuzinTheme::$layout == 'left-sidebar' ) {
+			if ( Theme::$layout == 'left-sidebar' ) {
 				get_sidebar();
 			}
 			?>
@@ -26,7 +28,7 @@ if ( NeuzinTheme::$layout == 'full-width' ) {
 					<div class="rt-search-post">
 						<?php if ( have_posts() ) :?>
 								<?php while ( have_posts() ) : the_post();
-									$excerpt_length = NeuzinTheme::neuzin_options('search_excerpt_length');
+									$excerpt_length = Theme::neuzin_options('search_excerpt_length');
 									get_template_part( 'template-parts/content-search', 'search' );
 								?>
 								<?php endwhile; ?>
@@ -34,11 +36,11 @@ if ( NeuzinTheme::$layout == 'full-width' ) {
 							<?php get_template_part( 'template-parts/content', 'none' );?>
 						<?php endif;?>
 					</div>
-					<?php NeuzinTheme_Helper::pagination();?>
+					<?php Helper::pagination();?>
 				</main>					
 			</div>
 			<?php
-			if ( NeuzinTheme::$layout == 'right-sidebar' ) {
+			if ( Theme::$layout == 'right-sidebar' ) {
 				get_sidebar();
 			}
 			?>

@@ -8,6 +8,7 @@
  */
 
 
+
 $neuzin_theme_data = wp_get_theme();
 do_action( 'neuzin_theme_init' );
 
@@ -24,6 +25,8 @@ define( 'NEUZIN_CSS_URL', NEUZIN_ASSETS_URL . 'css/' );
 define( 'NEUZIN_JS_URL', NEUZIN_ASSETS_URL . 'js/' );
 define( 'NEUZIN_IMG_URL', NEUZIN_ASSETS_URL . 'img/' );
 
+
+require_once get_template_directory() . '/inc/icon-trait.php';
 require_once get_template_directory() . '/inc/helper.php';
 require_once get_template_directory() . '/inc/includes.php';
 

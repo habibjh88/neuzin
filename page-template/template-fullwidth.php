@@ -3,7 +3,7 @@
 Template Name: Fullwidth Template
  */
 // Layout class
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-12';
 } else {
 	$neuzin_layout_class = 'col-lg-9 col-md-12 col-12';
@@ -14,7 +14,7 @@ if ( NeuzinTheme::$layout == 'full-width' ) {
 	<div class="container-fluid"> 
 		<div class="row">
 			<?php
-			if ( NeuzinTheme::$layout == 'left-sidebar' ) {
+			if ( Theme::$layout == 'left-sidebar' ) {
 				get_sidebar();
 			}
 			?>
@@ -31,7 +31,7 @@ if ( NeuzinTheme::$layout == 'full-width' ) {
 				</main>
 			</div>
 			<?php
-			if( NeuzinTheme::$layout == 'right-sidebar' ){				
+			if( Theme::$layout == 'right-sidebar' ){				
 				get_sidebar();
 			}
 			?>

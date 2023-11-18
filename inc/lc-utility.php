@@ -5,16 +5,16 @@
  * @since 1.0.0
  */
 
-namespace RTLC;
+namespace devofwp\Neuzin;
 
-if ( defined( 'RT_DEBUG' ) && RT_DEBUG ) {
+if ( defined( 'RT_DEBUG' ) && DEVOFWP_DEBUG ) {
 	return;
 }
 
 /**
  * Check Radius Theme License
  */
-class Utility {
+class LC_Utility {
 	/**
 	 * Class Constructor.
 	 */
@@ -220,7 +220,7 @@ class Utility {
 }
 
 if ( is_admin() ) {
-	new Utility();
+	new LC_Utility();
 }
 
 if ( ! function_exists( 'rtlc_is_valid' ) ) {

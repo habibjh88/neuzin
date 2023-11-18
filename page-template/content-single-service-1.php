@@ -16,10 +16,10 @@ $thumb_size = 'neuzin-size1';
 				if ( has_post_thumbnail() ){
 					the_post_thumbnail( $thumb_size );
 				} else {
-					if ( !empty( NeuzinTheme::neuzin_options('no_preview_image')['id'] ) ) {
-						echo wp_get_attachment_image( NeuzinTheme::neuzin_options('no_preview_image')['id'], $thumb_size );
+					if ( !empty( Theme::neuzin_options('no_preview_image')['id'] ) ) {
+						echo wp_get_attachment_image( Theme::neuzin_options('no_preview_image')['id'], $thumb_size );
 					} else {
-						echo '<img class="wp-post-image" src="' . NeuzinTheme_Helper::get_img( 'noimage_1210X723.jpg' ) . '" alt="'.get_the_title().'">';
+						echo '<img class="wp-post-image" src="' . Helper::get_img( 'noimage_1210X723.jpg' ) . '" alt="'.get_the_title().'">';
 					}
 				}
 			?>			

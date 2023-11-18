@@ -6,8 +6,10 @@
  */
 
 // Layout class
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 
-if ( NeuzinTheme::$layout == 'full-width' ) {
+if ( Theme::$layout == 'full-width' ) {
 	$neuzin_layout_class = 'col-sm-12 col-xs-12';
 	$col_class    = 'col-lg-4 col-md-6 col-sm-6 col-xs-12 no-equal-item';
 }
@@ -21,15 +23,13 @@ $iso						= 'no-equal-gallery';
 $sercices_archive_layout 	= "portfolio-default portfolio-multi-layout-1 portfolio-masonry-layout3  rt-isotope-wrapper";
 $template 				 	= 'portfolio-1';
 
-
-
 ?>
 <?php get_header(); ?>
 <div id="primary" class="content-area">
 	<div class="container">
 		<div class="row">
 			<?php
-				if ( NeuzinTheme::$layout == 'left-sidebar' ) {
+				if ( Theme::$layout == 'left-sidebar' ) {
 					get_sidebar();
 				}
 			?>
@@ -45,14 +45,14 @@ $template 				 	= 'portfolio-1';
 							<?php endwhile; ?>
 						</div>
  
-					<?php NeuzinTheme_Helper::pagination(); ?>	
+					<?php Helper::pagination(); ?>	
 					<?php else:?>
 						<?php get_template_part( 'template-parts/content', 'none' );?>
 					<?php endif;?>
 				</main>
 			</div>
 			<?php
-				if( NeuzinTheme::$layout == 'right-sidebar' ){				
+				if( Theme::$layout == 'right-sidebar' ){				
 					get_sidebar();
 				}
 			?>

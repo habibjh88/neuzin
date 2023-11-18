@@ -6,20 +6,21 @@
  */
 
  /*CREDIT : Jannah theme( TieLab ), Modified By DevOfWP*/
- 
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 if( ! function_exists( 'neuzin_breadcrumbs' )){
 
 	function neuzin_breadcrumbs(){
 			
-		if( NeuzinTheme::neuzin_options('breadcrumb_active') == '0' || NeuzinTheme::neuzin_options('breadcrumb_hide_mobile') == '0' ) {			
+		if( Theme::neuzin_options('breadcrumb_active') == '0' || Theme::neuzin_options('breadcrumb_hide_mobile') == '0' ) {			
 			return;
 		}
 
 		# breadcrumbs ----------
 		
-		$delimiter  = NeuzinTheme::neuzin_options('breadcrumbs_delimiter') ? wp_kses_post( NeuzinTheme::neuzin_options('breadcrumbs_delimiter') ) : '&#47;';
+		$delimiter  = Theme::neuzin_options('breadcrumbs_delimiter') ? wp_kses_post( Theme::neuzin_options('breadcrumbs_delimiter') ) : '&#47;';
 		$delimiter  = '<em class="delimiter">'. $delimiter .'</em>';
 
 		$home_text  = esc_html__( 'Home', 'neuzin' );
@@ -254,7 +255,7 @@ if( ! function_exists( 'neuzin_breadcrumbs' )){
 						'@type'    => 'ListItem',
 						'position' => $cunter,
 						'item'     => array(
-							'name' => str_replace( '<span class="fa fa-home" aria-hidden="true"></span> ', '', $item['name']),
+							'name' => str_replace( '<span class="fa fa-home" aria-hidden="true"></span> ', '', $item['name']??''),
 							'@id'  => $item['url'],
 						)
 					);

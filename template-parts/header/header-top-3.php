@@ -4,7 +4,9 @@
  * @since   1.0
  * @version 1.0
  */
-$neuzin_socials = NeuzinTheme_Helper::socials();
+use devofwp\Neuzin\Theme;
+use devofwp\Neuzin\Helper;
+$neuzin_socials = Helper::socials();
 ?>
 <div id="tophead" class="header-top-bar align-items-center">
 	<div class="container">

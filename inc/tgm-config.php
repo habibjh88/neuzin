@@ -16,7 +16,7 @@ function neuzin_register_required_plugins()
             'source'       => 'neuzin-core.zip',
             'required'     =>  true,
             'external_url' => 'http://devofwp.com',
-            'version'      => '2.0.0'
+            'version'      => '1.0.0'
         ),
         array(
             'name'         => 'RT Framework',
