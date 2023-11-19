@@ -8,6 +8,8 @@
  */
 
 
+use devofwp\Neuzin\Theme;
+
 
 $neuzin_theme_data = wp_get_theme();
 do_action( 'neuzin_theme_init' );
@@ -31,3 +33,4 @@ require_once get_template_directory() . '/inc/helper.php';
 require_once get_template_directory() . '/inc/includes.php';
 
 add_editor_style( 'style-editor.css' );
+var_dump([ "func-2" =>Theme::$header_style]);

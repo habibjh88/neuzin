@@ -19,7 +19,7 @@ if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_loca
 		<?php get_template_part( 'template-parts/footer/footer', Theme::$footer_style ); ?>
 	</div>
 </footer>
-</div>
+</div><!-- End Content wrapper -->
 <?php wp_footer();?>
 </body>
 </html>

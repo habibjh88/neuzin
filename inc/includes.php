@@ -14,16 +14,17 @@ namespace devofwp\Neuzin;
 Helper::requires( 'helper-functions.php' );
 Helper::requires( 'redux-config.php' );
 Helper::requires( 'theme.php' );
-Helper::requires( 'general.php' );
+Helper::requires( 'hooks.php' );
+Helper::requires( 'fns.php' );
 Helper::requires( 'scripts.php' );
-Helper::requires( 'template-vars.php' );
+Helper::requires( 'theme-config.php' );
 //Helper::requires( 'lc-helper.php' );
 //Helper::requires( 'lc-utility.php' );
 
 // Includes Modules
-Helper::requires( 'rt-post-related.php', 'inc/modules' );
-Helper::requires( 'rt-breadcrumbs.php', 'inc/modules' );
-Helper::requires( 'rt-portfolio-related.php', 'inc/modules' );
+Helper::requires( 'related-post.php', 'inc/modules' );
+Helper::requires( 'breadcrumbs.php', 'inc/modules' );
+Helper::requires( 'related-portfolio.php', 'inc/modules' );
 
 // WooCommerce
 if ( class_exists( 'WooCommerce' ) ) {

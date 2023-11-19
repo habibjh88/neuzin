@@ -84,7 +84,6 @@ class Helper {
 		include NEUZIN_INC_DIR . 'views/comments-callback.php';
 	}
 
-
 	public static function hex2rgb( $hex ) {
 		$hex = str_replace( "#", "", $hex );
 		if ( strlen( $hex ) == 3 ) {
@@ -256,48 +255,6 @@ class Helper {
 		}
 
 		return $nav_menu_args;
-	}
-
-	public static function has_footer() {
-
-		if ( Theme::$footer_style == 2 ) {
-			$footer_column = Theme::neuzin_options( 'footer_column_2' );
-			for ( $i = 1; $i <= $footer_column; $i ++ ) {
-				if ( is_active_sidebar( 'footer-' . $i ) ) {
-					return true;
-				}
-			}
-
-			return false;
-		} else if ( Theme::$footer_style == 3 ) {
-			$footer_column = Theme::neuzin_options( 'footer_column_3' );
-			for ( $i = 1; $i <= $footer_column; $i ++ ) {
-				if ( is_active_sidebar( 'footer-' . $i ) ) {
-					return true;
-				}
-			}
-
-			return false;
-		} else if ( Theme::$footer_style == 4 ) {
-			$footer_column = Theme::neuzin_options( 'footer_column_4' );
-			for ( $i = 1; $i <= $footer_column; $i ++ ) {
-				if ( is_active_sidebar( 'footer-' . $i ) ) {
-					return true;
-				}
-			}
-
-			return false;
-		} else if ( Theme::$footer_style == 5 ) {
-			$footer_column = Theme::neuzin_options( 'footer_column_5' );
-			for ( $i = 1; $i <= $footer_column; $i ++ ) {
-				if ( is_active_sidebar( 'footer-' . $i ) ) {
-					return true;
-				}
-			}
-
-			return false;
-		}
-
 	}
 
 	public static function get_img( $img ) {

@@ -1913,7 +1913,7 @@ function neuzin_redux_post_type_fields($prefix) {
 			'required' => [$prefix . '_bgtype', 'equals', 'bgimg'],
 		],
 		[
-			'id'          => $prefix . '_bgcolor',
+			'id'          => $prefix . '_banner_bgcolor',
 			'type'        => 'color',
 			'title'       => esc_html__('Banner Background Color', 'neuzin'),
 			'validate'    => 'color',

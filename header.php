@@ -4,7 +4,9 @@
  * @since   1.0
  * @version 1.0
  */
+
 use devofwp\Neuzin\Theme;
+
 ?>
 	<!doctype html>
 <html <?php language_attributes(); ?>>
@@ -33,27 +35,39 @@ if ( Theme::neuzin_options( 'preloader' ) == '1' ) {
 if ( function_exists( 'elementor_theme_do_location' ) && elementor_theme_do_location( 'header' ) ) {
 	return;
 }
-
+var_dump(["header"=>Theme::$header_style]);
 ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'neuzin' ); ?></a>
+
+	<!--Start Header-->
 	<header id="masthead" class="site-header">
 		<div id="header-<?php echo esc_attr( Theme::$header_style ); ?>" class="header-area header-fixed ">
+			<!-- Topbar -->
 			<?php if ( Theme::$top_bar == 1 || Theme::$top_bar == 'on' ) { ?>
 				<?php get_template_part( 'template-parts/header/header-top', Theme::$top_bar_style ); ?>
 			<?php } ?>
+			<!-- Main Menu -->
 			<?php if ( Theme::$header_opt == 1 || Theme::$header_opt == 'on' ) { ?>
 				<?php get_template_part( 'template-parts/header/header', Theme::$header_style ); ?>
 			<?php } ?>
 		</div>
 	</header>
+	<!--End Header-->
 
-<?php get_template_part( 'template-parts/header/header', 'offscreen' ); ?>
+
+<?php
+//Header Offscreen
+get_template_part( 'template-parts/header/header', 'offscreen' );
+?>
 	<div id="header-area-space"></div>
+
 	<div id="header-search" class="header-search">
 		<button type="button" class="close">×</button>
 		<?php get_search_form(); ?>
 	</div>
+
+	<!-- Start Content wrapper -->
 	<div id="content" class="site-content">
 <?php
 if ( Theme::$has_banner == '1' || Theme::$has_banner == 'on' ) {

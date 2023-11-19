@@ -34,11 +34,20 @@ gulp.task('scss', function () {
 
 gulp.task('rtl', function () {
     return gulp.src([
-        'assets/build/*.css',
-        '!assets/css/rtl.css'
+        'assets/css/style.css',
     ])
         .pipe(rtlcss())
-        .pipe(gulp.dest('assets/css-auto-rtl/'));
+        .pipe(gulp.dest('assets/rtl/'));
+});
+
+gulp.task('build-rtl', () => {
+    return gulp.src([
+        'assets/rtl/style.css',
+        'assets/rtl/rtl.css',
+    ])
+        .pipe(concat('styles.rtl.min.css'))
+        .pipe(cleanCss())
+        .pipe(gulp.dest('assets/build'));
 });
 
 // Concat and minify CSS files
@@ -136,7 +145,7 @@ gulp.task('zip', function () {
 
 //'build-js','build-vendor-js',
 gulp.task('watch', function () {
-    gulp.watch('src/scss/**/*.scss', gulp.series( 'scss', 'build-css', 'rtl' ));
+    gulp.watch('src/scss/**/*.scss', gulp.series( 'scss', 'build-css', 'rtl', 'build-rtl' ));
     gulp.watch('assets/js/main.js', gulp.series( 'build-vendor-js'));
 });
 

@@ -119,9 +119,9 @@ if ( $neuzin_has_entry_meta ) {
 		<?php } ?>
 	<?php } ?>
 	</div>
-	<?php if( Theme::neuzin_options('show_related_port') == '1' && is_single() && !empty ( neuzin_related_port() ) ) { ?>
+	<?php if( Theme::neuzin_options('show_related_port') == '1' && is_single() && !empty ( neuzin_related_post() ) ) { ?>
 	<div class="related-post">
-		<?php neuzin_related_port(); ?>
+		<?php neuzin_related_post(); ?>
 	</div>
 	<?php } ?>
 </div>

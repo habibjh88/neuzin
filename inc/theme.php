@@ -4,6 +4,7 @@
  * @since   1.0
  * @version 1.0
  */
+
 namespace devofwp\Neuzin;
 if ( ! class_exists( 'Theme' ) ) {
 
